@@ -1,0 +1,27 @@
+NORTHSHORE UNIVERSITY — OFFICE OF THE BURSAR
+Statement of Account / Tuition Invoice
+
+Invoice No.:        NSU-INV-2026-FA-771204
+Statement date:     2026-09-10
+Student:            Leila Ahmadi
+Student number:     NSU-2026-48213
+Program:            BSc Computer Science (International), Year 2
+Term:               Fall 2026
+
+Charges
+  Tuition — international, full-time (15 credits)     CAD  8,120.00
+  Student services & health plan                        CAD    240.00
+  Technology fee                                        CAD     90.00
+                                                        -----------
+  TOTAL DUE                                             CAD  8,450.00
+
+Payment due date:   2026-10-01
+Late fee after due date: CAD 150.00 and a registration hold.
+
+How to pay
+  Pay with Bitcoin via GoBTC Pay
+  Payee:               Northshore University Bursar
+  GoBTC merchant ID:   {{MERCHANT_ID}}
+  Payment reference:   NSU-INV-2026-FA-771204
+
+Questions: bursar@northshore.example

@@ -1,0 +1,16 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "tuitionpilot-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev", "--", "-p", "3100"],
+      "port": 3100
+    },
+    {
+      "name": "tuitionpilot-attach",
+      "url": "http://localhost:3000",
+      "port": 3000
+    }
+  ]
+}

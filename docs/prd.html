@@ -1,0 +1,1029 @@
+<title>TuitionPilot PRD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root {
+  --font-display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --font-sans: 'IBM Plex Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+
+:root {
+  --navy-950: #060726;   
+  --navy-900: #0A0B3B;   
+  --navy-800: #14163F;   
+  --navy-700: #20235A;   
+  --navy-600: #34387A;   
+  --navy-500: #4A4F9E;   
+  --navy-300: #9EA1D6;   
+  --navy-100: #E4E5F4;   
+  --red-700:  #A50C22;   
+  --red-600:  #B80E27;   
+  --red-500:  #D2102C;   
+  --red-400:  #E5435A;   
+  --red-200:  #F4B8C1;   
+  --red-100:  #FBE5E8;   
+  --red-50:   #FDF2F3;   
+  --white:    #FFFFFF;
+  --slate-50:  #F7F8FB;  
+  --slate-100: #EEF0F5;  
+  --slate-200: #E0E3EC;  
+  --slate-300: #C7CCDA;  
+  --slate-400: #98A0B5;  
+  --slate-500: #6B7388;  
+  --slate-600: #5A6175;  
+  --slate-700: #353B4D;  
+  --slate-900: #1A1E2C;  
+  --success-500: #1F9D72;
+  --success-100: #E3F4EE;
+  --warning-500: #C9871A;
+  --warning-100: #FBF0DC;
+  --info-500:    #2563C9;
+  --info-100:    #E4EDFB;
+}
+:root {
+  --surface-page:        var(--slate-50);
+  --surface-card:        var(--white);
+  --surface-sunken:      var(--slate-100);
+  --surface-inverse:     var(--navy-900);   
+  --surface-inverse-2:   var(--navy-800);   
+  --text-strong:   var(--navy-900);   
+  --text-body:     var(--slate-900);  
+  --text-muted:    var(--slate-500);  
+  --text-faint:    var(--slate-400);  
+  --text-on-dark:        var(--white);
+  --text-on-dark-muted:  var(--navy-300);
+  --text-accent:   var(--red-500);
+  --brand-navy:    var(--navy-900);
+  --brand-red:     var(--red-500);
+  --border-subtle: var(--slate-200);
+  --border-strong: var(--slate-300);
+  --border-on-dark: var(--navy-700);
+  --accent:         var(--red-500);
+  --accent-hover:   var(--red-600);
+  --accent-active:  var(--red-700);
+  --ring: var(--red-400);
+}
+:root {
+  --font-display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
+  --font-sans: 'IBM Plex Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --fw-regular: 400;  
+  --fw-medium: 500;   
+  --fw-semibold: 600; 
+  --fw-bold: 700;     
+  --fs-display: 4.5rem;    
+  --fs-h1: 3.25rem;        
+  --fs-h2: 2.5rem;         
+  --fs-h3: 1.75rem;        
+  --fs-h4: 1.3125rem;      
+  --fs-lead: 1.25rem;      
+  --fs-body: 1.0625rem;    
+  --fs-sm: 0.9375rem;      
+  --fs-xs: 0.8125rem;      
+  --fs-eyebrow: 0.75rem;   
+  --lh-tight: 1.04;        
+  --lh-snug: 1.15;         
+  --lh-normal: 1.55;       
+  --lh-relaxed: 1.7;       
+  --ls-tighter: -0.03em;   
+  --ls-tight: -0.015em;    
+  --ls-normal: 0;          
+  --ls-wide: 0.04em;       
+  --ls-eyebrow: 0.18em;    
+}
+:root {
+  --space-0: 0;
+  --space-1: 0.25rem;   
+  --space-2: 0.5rem;    
+  --space-3: 0.75rem;   
+  --space-4: 1rem;      
+  --space-5: 1.5rem;    
+  --space-6: 2rem;      
+  --space-7: 2.5rem;    
+  --space-8: 3rem;      
+  --space-9: 4rem;      
+  --space-10: 5rem;     
+  --space-12: 7rem;     
+  --space-14: 9rem;     
+  --container-max: 1200px;
+  --container-wide: 1320px;
+  --container-pad: 1.5rem;     
+  --container-pad-lg: 2.5rem;  
+  --section-y: 7rem;           
+  --section-y-sm: 4.5rem;
+}
+:root {
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 10px;     
+  --radius-lg: 16px;     
+  --radius-xl: 24px;
+  --radius-pill: 999px;  
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-accent: 3px;  
+  --shadow-xs: 0 1px 2px rgba(10, 11, 59, 0.06);
+  --shadow-sm: 0 2px 6px rgba(10, 11, 59, 0.07);
+  --shadow-md: 0 8px 24px rgba(10, 11, 59, 0.09);
+  --shadow-lg: 0 18px 48px rgba(10, 11, 59, 0.13);
+  --shadow-accent: 0 10px 30px rgba(210, 16, 44, 0.22);  
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);     
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); 
+  --dur-fast: 140ms;  
+  --dur: 220ms;       
+  --dur-slow: 420ms;  
+  --z-nav: 100;      
+  --z-overlay: 500;  
+}
+
+
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--slate-50); }
+  a { color: var(--red-600); text-decoration: none; }
+  a:hover { color: var(--red-500); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+html, body { color-scheme: light; }
+body { font-family: var(--font-sans); }
+a.h:hover, a.h:focus-visible { color: var(--red-600); }
+a:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; border-radius: 2px; }
+@media (max-width: 720px) {
+  nav[style*="sticky"] { position: static !important; flex-basis: 100% !important; padding-top: 28px !important; }
+  [style*="grid-template-columns:1fr 1.1fr 1.7fr"], [style*="grid-template-columns:1fr 1fr 1.8fr"] { min-width: 560px; }
+  [style*="overflow:hidden"] { overflow-x: auto !important; }
+}
+</style>
+<div style="font-family:var(--font-sans);color:var(--text-body);background:var(--slate-50);min-height:100vh">
+
+  <header style="background:var(--navy-950);color:#fff;border-bottom:3px solid var(--red-500)">
+    <div style="max-width:1220px;margin:0 auto;padding:34px 32px 40px">
+      <div style="display:flex;align-items:center;gap:11px;margin-bottom:38px">
+        <svg width="30" height="30" viewBox="0 0 64 64" fill="none" role="img" aria-label="TuitionPilot" style="display:block;flex:none"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#FFFFFF"/></svg>
+        <span style="font-family:var(--font-display);font-size:17px;font-weight:700;color:#fff;letter-spacing:-0.02em">TuitionPilot</span>
+        <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--navy-300);border-left:1px solid var(--navy-700);padding-left:11px">Novalycs</span>
+      </div>
+
+      <div style="display:flex;gap:56px;flex-wrap:wrap;align-items:flex-end">
+        <div style="flex:1 1 520px;min-width:0">
+          <div style="font-family:var(--font-mono);font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--red-400);margin-bottom:16px">// Product requirements · Draft</div>
+          <h1 style="font-family:var(--font-display);font-size:clamp(44px,6vw,68px);line-height:1.02;font-weight:700;letter-spacing:-0.035em;margin:0;color:#fff">TuitionPilot</h1>
+          <p style="font-size:20px;line-height:1.55;color:var(--navy-300);margin:20px 0 0;max-width:58ch;text-wrap:pretty">An AI agent that pays tuition on time and refuses fraud — for families whose banks can’t reliably get money to a Canadian school. The school is paid in CAD; Bitcoin on GoBTC Pay is only the rail in between.</p>
+        </div>
+        <div style="flex:0 1 300px;min-width:0;background:var(--navy-900);border:1px solid var(--navy-700);border-left:3px solid var(--red-500);border-radius:var(--radius-md);padding:22px 24px">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-300)">Owner</div>
+          <div style="font-size:15px;font-weight:600;color:#fff;margin:3px 0 16px">Jafar Pashami · Novalycs</div>
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-300)">Version</div>
+          <div style="font-size:15px;font-weight:600;color:#fff;margin:3px 0 16px">0.2 · 16 Sep 2026</div>
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-300)">Context</div>
+          <div style="font-size:15px;font-weight:600;color:#fff;margin:3px 0 16px">Agentic Commerce Pioneers II, Track 2</div>
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-300)">Demo day</div>
+          <div style="font-size:15px;font-weight:600;color:#fff;margin:3px 0 0">21 Sep 2026, online</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  
+    <div style="background:var(--navy-900);border-bottom:1px solid var(--border-subtle)">
+      <div style="max-width:1220px;margin:0 auto;padding:22px 32px;display:flex;gap:14px;flex-wrap:wrap">
+        <div style="flex:1 1 200px;min-width:0">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-300);margin-bottom:6px">Rail</div>
+          <div style="font-size:15px;font-weight:600;color:#fff">Bitcoin on GoBTC Pay today · stablecoins next</div>
+        </div>
+        <div style="flex:1 1 180px;min-width:0">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-300);margin-bottom:6px">School receives</div>
+          <div style="font-size:15px;font-weight:600;color:#fff">CAD, via an off-ramp partner</div>
+        </div>
+        <div style="flex:1 1 180px;min-width:0">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-300);margin-bottom:6px">Guardrails</div>
+          <div style="font-size:15px;font-weight:600;color:#fff">Spending rules enforced in code</div>
+        </div>
+        <div style="flex:1 1 150px;min-width:0">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-300);margin-bottom:6px">Demo scale</div>
+          <div style="font-size:15px;font-weight:600;color:#fff">Amounts scaled 1 : 5,000</div>
+        </div>
+      </div>
+    </div>
+  
+
+  <div style="max-width:1220px;margin:0 auto;padding:0 32px 90px;display:flex;gap:52px;align-items:flex-start;flex-wrap:wrap">
+
+    
+      <nav style="flex:0 1 208px;min-width:180px;position:sticky;top:24px;padding-top:44px">
+        <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-faint);margin-bottom:14px">Contents</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          
+            <a href="#vision" style="display:flex;gap:10px;font-size:13.5px;line-height:1.4;color:var(--text-muted)" class="h">
+              <span style="font-family:var(--font-mono);color:var(--text-faint);min-width:1.6em">01</span>
+              <span>Vision</span>
+            </a>
+          
+            <a href="#problem" style="display:flex;gap:10px;font-size:13.5px;line-height:1.4;color:var(--text-muted)" class="h">
+              <span style="font-family:var(--font-mono);color:var(--text-faint);min-width:1.6em">02</span>
+              <span>Problem</span>
+            </a>
+          
+            <a href="#roles" style="display:flex;gap:10px;font-size:13.5px;line-height:1.4;color:var(--text-muted)" class="h">
+              <span style="font-family:var(--font-mono);color:var(--text-faint);min-width:1.6em">03</span>
+              <span>Users and roles</span>
+            </a>
+          
+            <a href="#money" style="display:flex;gap:10px;font-size:13.5px;line-height:1.4;color:var(--text-muted)" class="h">
+              <span style="font-family:var(--font-mono);color:var(--text-faint);min-width:1.6em">04</span>
+              <span>Wallets and money flow</span>
+            </a>
+          
+            <a href="#flows" style="display:flex;gap:10px;font-size:13.5px;line-height:1.4;color:var(--text-muted)" class="h">
+              <span style="font-family:var(--font-mono);color:var(--text-faint);min-width:1.6em">05</span>
+              <span>Core flows</span>
+            </a>
+          
+            <a href="#reqs" style="display:flex;gap:10px;font-size:13.5px;line-height:1.4;color:var(--text-muted)" class="h">
+              <span style="font-family:var(--font-mono);color:var(--text-faint);min-width:1.6em">06</span>
+              <span>Requirements</span>
+            </a>
+          
+            <a href="#states" style="display:flex;gap:10px;font-size:13.5px;line-height:1.4;color:var(--text-muted)" class="h">
+              <span style="font-family:var(--font-mono);color:var(--text-faint);min-width:1.6em">07</span>
+              <span>Paid vs. settled</span>
+            </a>
+          
+            <a href="#fx" style="display:flex;gap:10px;font-size:13.5px;line-height:1.4;color:var(--text-muted)" class="h">
+              <span style="font-family:var(--font-mono);color:var(--text-faint);min-width:1.6em">08</span>
+              <span>Exchange rate and fees</span>
+            </a>
+          
+            <a href="#biz" style="display:flex;gap:10px;font-size:13.5px;line-height:1.4;color:var(--text-muted)" class="h">
+              <span style="font-family:var(--font-mono);color:var(--text-faint);min-width:1.6em">09</span>
+              <span>Business model</span>
+            </a>
+          
+            <a href="#risk" style="display:flex;gap:10px;font-size:13.5px;line-height:1.4;color:var(--text-muted)" class="h">
+              <span style="font-family:var(--font-mono);color:var(--text-faint);min-width:1.6em">10</span>
+              <span>Compliance and risk</span>
+            </a>
+          
+            <a href="#demo" style="display:flex;gap:10px;font-size:13.5px;line-height:1.4;color:var(--text-muted)" class="h">
+              <span style="font-family:var(--font-mono);color:var(--text-faint);min-width:1.6em">11</span>
+              <span>Demo scope</span>
+            </a>
+          
+            <a href="#metrics" style="display:flex;gap:10px;font-size:13.5px;line-height:1.4;color:var(--text-muted)" class="h">
+              <span style="font-family:var(--font-mono);color:var(--text-faint);min-width:1.6em">12</span>
+              <span>Success metrics</span>
+            </a>
+          
+            <a href="#roadmap" style="display:flex;gap:10px;font-size:13.5px;line-height:1.4;color:var(--text-muted)" class="h">
+              <span style="font-family:var(--font-mono);color:var(--text-faint);min-width:1.6em">13</span>
+              <span>Roadmap</span>
+            </a>
+          
+            <a href="#open" style="display:flex;gap:10px;font-size:13.5px;line-height:1.4;color:var(--text-muted)" class="h">
+              <span style="font-family:var(--font-mono);color:var(--text-faint);min-width:1.6em">14</span>
+              <span>Open questions</span>
+            </a>
+          
+        </div>
+      </nav>
+    
+
+    <main style="flex:1 1 640px;min-width:0;max-width:800px">
+
+      <section id="vision" style="padding-top:52px">
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
+          <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--red-500)">01</span>
+          <h2 style="font-family:var(--font-display);font-size:29px;font-weight:700;letter-spacing:-0.025em;color:var(--text-strong);margin:0">Vision</h2>
+        </div>
+        <p style="font-family:var(--font-display);font-size:26px;line-height:1.28;font-weight:600;letter-spacing:-0.02em;color:var(--navy-900);margin:0 0 22px;padding-left:20px;border-left:3px solid var(--red-500);max-width:32ch;text-wrap:balance">Tuition that pays itself — on time, to the right school, never twice.</p>
+        <p style="font-size:16px;line-height:1.65;margin:0 0 14px;max-width:68ch;text-wrap:pretty">Families who support a student abroad — especially where banks restrict or delay foreign exchange — should not have to chase deadlines, trust forwarded invoices, or wait on a wire that may never leave. They set the rules once; an agent does the rest and shows proof.</p>
+        <p style="font-size:16px;line-height:1.65;margin:0;max-width:68ch;text-wrap:pretty"><strong style="font-weight:600;color:var(--text-strong)">Hackathon goal:</strong> show an agent that completes a real payment end to end — understand the invoice, check it, pay it, and prove it — with the safety a payments judge expects.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:22px">
+          <div style="background:var(--success-100);border:1px solid #BEE4D6;border-radius:var(--radius-md);padding:16px 18px">
+            <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#12734F;margin-bottom:8px">What we are</div>
+            <ul style="margin:0;padding-left:1.1em;font-size:14.5px;line-height:1.6">
+              <li><strong style="font-weight:600">Access</strong> for families whose bank transfer is blocked, rationed or slow.</li>
+              <li><strong style="font-weight:600">Guardrails</strong>: pinned payee, caps, deadline-aware autopay, one payment per invoice.</li>
+              <li><strong style="font-weight:600">Proof</strong> both the family and the school can read.</li>
+            </ul>
+          </div>
+          <div style="background:var(--red-50);border:1px solid var(--red-200);border-radius:var(--radius-md);padding:16px 18px">
+            <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--red-600);margin-bottom:8px">What we are not</div>
+            <ul style="margin:0;padding-left:1.1em;font-size:14.5px;line-height:1.6">
+              <li>Not cheaper than specialist FX providers — competitive at best (see 08).</li>
+              <li>Not a promise of the best exchange rate — a locked, visible one.</li>
+              <li>Not asking universities to accept crypto — they receive CAD.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="problem" style="padding-top:52px">
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
+          <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--red-500)">02</span>
+          <h2 style="font-family:var(--font-display);font-size:29px;font-weight:700;letter-spacing:-0.025em;color:var(--text-strong);margin:0">Problem</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-top:3px solid var(--red-500);border-radius:var(--radius-md);padding:18px 20px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:6px">Money can’t always leave</div>
+            <p style="font-size:14.5px;line-height:1.6;color:var(--text-muted);margin:0;text-wrap:pretty">In some countries banks ration or refuse foreign exchange for study abroad — Nigeria’s central bank stopped supplying it. Where wires do work they take 1–5 days and hide a 2–4% margin.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-top:3px solid var(--red-500);border-radius:var(--radius-md);padding:18px 20px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:6px">Deadlines are unforgiving</div>
+            <p style="font-size:14.5px;line-height:1.6;color:var(--text-muted);margin:0;text-wrap:pretty">A missed due date means late fees and a registration hold — and for international students, stress about study-permit status.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-top:3px solid var(--red-500);border-radius:var(--radius-md);padding:18px 20px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:6px">Fraud targets families</div>
+            <p style="font-size:14.5px;line-height:1.6;color:var(--text-muted);margin:0;text-wrap:pretty">Canadian police and universities report tuition scams targeting international students — one ring took more than CAD 125,000, one victim lost CAD 37,000. A parent far away can’t easily tell a real invoice from a fake one.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-top:3px solid var(--red-500);border-radius:var(--radius-md);padding:18px 20px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:6px">No shared view</div>
+            <p style="font-size:14.5px;line-height:1.6;color:var(--text-muted);margin:0;text-wrap:pretty">The student sees the invoice, the parent holds the money, and neither gets instant proof that the school was paid.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-top:3px solid var(--red-500);border-radius:var(--radius-md);padding:18px 20px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:6px">Families hold stablecoins, not spare Bitcoin</div>
+            <p style="font-size:14.5px;line-height:1.6;color:var(--text-muted);margin:0;text-wrap:pretty">India ranks first and Nigeria sixth for crypto adoption, and the activity is mostly USDT used for payments. Bitcoin is held as an investment. Almost no university accepts either directly.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="roles" style="padding-top:52px">
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
+          <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--red-500)">03</span>
+          <h2 style="font-family:var(--font-display);font-size:29px;font-weight:700;letter-spacing:-0.025em;color:var(--text-strong);margin:0">Users and roles</h2>
+        </div>
+        <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-md);overflow:hidden">
+          <div style="display:grid;grid-template-columns:1fr 1.1fr 1.7fr;gap:18px;padding:11px 18px;background:var(--slate-100);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)">
+            <div>Who</div><div>Wants</div><div>Does in TuitionPilot</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.1fr 1.7fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div><span style="font-weight:600;color:var(--text-strong)">Parent</span><span style="display:block;font-size:12.5px;color:var(--text-muted)">primary customer, pays</span></div>
+            <div style="color:var(--text-muted)">Tuition paid on time, no fraud, no surprises</div>
+            <div>Funds the family wallet once, sets the rules (approved school, cap per term, payment window, autopay), receives receipts</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.1fr 1.7fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div><span style="font-weight:600;color:var(--text-strong)">Student</span><span style="display:block;font-size:12.5px;color:var(--text-muted)">primary user</span></div>
+            <div style="color:var(--text-muted)">No holds, no chasing parents</div>
+            <div>Uploads the fee invoice, sees status and proof</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.1fr 1.7fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;background:var(--red-50)">
+            <div><span style="font-weight:600;color:var(--text-strong)">TuitionPilot agent</span><span style="display:block;font-size:12.5px;color:var(--red-600)">our product</span></div>
+            <div style="color:var(--text-muted)">—</div>
+            <div>Reads the invoice, runs the rule check, verifies the payment request, signs, reports</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.1fr 1.7fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div><span style="font-weight:600;color:var(--text-strong)">GoBTC Pay</span><span style="display:block;font-size:12.5px;color:var(--text-muted)">payment rail, Track 2 sponsor</span></div>
+            <div style="color:var(--text-muted)">—</div>
+            <div>Hosts the university’s merchant account, issues payment requests, co-signs the agent’s payment, settles on Bitcoin</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.1fr 1.7fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div><span style="font-weight:600;color:var(--text-strong)">University bursar</span><span style="display:block;font-size:12.5px;color:var(--text-muted)">payee</span></div>
+            <div style="color:var(--text-muted)">Full amount, on time, identifiable</div>
+            <div>Issues the payment request in CAD, receives BTC, converts to CAD</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.1fr 1.7fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div><span style="font-weight:600;color:var(--text-strong)">Agnic.ai</span><span style="display:block;font-size:12.5px;color:var(--text-muted)">hackathon host</span></div>
+            <div style="color:var(--text-muted)">—</div>
+            <div style="color:var(--text-muted)">Not in the payment flow</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="money" style="padding-top:52px">
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
+          <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--red-500)">04</span>
+          <h2 style="font-family:var(--font-display);font-size:29px;font-weight:700;letter-spacing:-0.025em;color:var(--text-strong);margin:0">Wallets and money flow</h2>
+        </div>
+        <p style="font-size:16px;line-height:1.65;margin:0 0 16px;max-width:68ch">Three parties hold Bitcoin. Only two wallets live inside the product.</p>
+        <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-md);overflow:hidden;margin-bottom:26px">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1.8fr;gap:18px;padding:11px 18px;background:var(--slate-100);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)">
+            <div>Wallet</div><div>Controlled by</div><div>Purpose</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1.8fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div><span style="font-weight:600;color:var(--text-strong)">Parent’s own wallet</span><span style="display:block;font-size:12.5px;color:var(--text-muted)">outside the product</span></div>
+            <div style="color:var(--text-muted)">Parent</div>
+            <div>Any exchange or wallet; used to top up the family wallet</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1.8fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;background:var(--red-50)">
+            <div><span style="font-weight:600;color:var(--text-strong)">Family wallet</span><span style="display:block;font-size:12.5px;color:var(--red-600)">one per family · 2-of-3 multisig</span></div>
+            <div style="color:var(--text-muted)">Agent key + GoBTC key (+ recovery key)</div>
+            <div>The only money the agent can spend. Every spend needs GoBTC’s co-signature, which makes “paid” instant and double-spend-proof.</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1.8fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div><span style="font-weight:600;color:var(--text-strong)">University wallet</span><span style="display:block;font-size:12.5px;color:var(--text-muted)">GoBTC merchant, HD wallet</span></div>
+            <div style="color:var(--text-muted)">University</div>
+            <div>Receives payments; a fresh address per payment request</div>
+          </div>
+        </div>
+
+        <div style="background:var(--navy-950);border:1px solid var(--navy-700);border-radius:var(--radius-lg);padding:26px 28px">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--red-400);margin-bottom:20px">// End-to-end sequence</div>
+          <div style="display:flex;flex-direction:column;gap:2px">
+            <div style="display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start;padding:10px 0;border-top:1px solid var(--navy-800)">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--navy-500);padding-top:4px">01</span>
+              <span>
+                <span style="display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">
+                  <span style="background:rgba(255,255,255,.08);border:1px solid var(--navy-700);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">Parent</span>
+                  <span style="color:var(--red-400)">→</span>
+                  <span style="background:var(--red-500);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">Agent</span>
+                </span>
+                <span style="display:block;font-size:14.5px;line-height:1.5;color:#fff">Top up family wallet, set rules</span>
+              </span>
+            </div>
+            <div style="display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start;padding:10px 0;border-top:1px solid var(--navy-800)">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--navy-500);padding-top:4px">02</span>
+              <span>
+                <span style="display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">
+                  <span style="background:rgba(255,255,255,.08);border:1px solid var(--navy-700);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">Student</span>
+                  <span style="color:var(--red-400)">→</span>
+                  <span style="background:var(--red-500);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">Agent</span>
+                </span>
+                <span style="display:block;font-size:14.5px;line-height:1.5;color:#fff">Upload fee invoice</span>
+              </span>
+            </div>
+            <div style="display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start;padding:10px 0;border-top:1px solid var(--navy-800)">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--navy-500);padding-top:4px">03</span>
+              <span>
+                <span style="display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">
+                  <span style="background:var(--red-500);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">Agent</span>
+                  <span style="color:var(--red-400)">↻</span>
+                </span>
+                <span style="display:block;font-size:14.5px;line-height:1.5;color:#fff">Read invoice, run rule check (code)</span>
+              </span>
+            </div>
+            <div style="display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start;padding:10px 0;border-top:1px solid var(--navy-800)">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--navy-500);padding-top:4px">04</span>
+              <span>
+                <span style="display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">
+                  <span style="background:rgba(255,255,255,.08);border:1px solid var(--navy-700);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">Bursar</span>
+                  <span style="color:var(--red-400)">→</span>
+                  <span style="background:rgba(255,255,255,.08);border:1px solid var(--navy-700);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">GoBTC Pay</span>
+                </span>
+                <span style="display:block;font-size:14.5px;line-height:1.5;color:#fff">Payment request in CAD</span>
+              </span>
+            </div>
+            <div style="display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start;padding:10px 0;border-top:1px solid var(--navy-800)">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--navy-500);padding-top:4px">05</span>
+              <span>
+                <span style="display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">
+                  <span style="background:rgba(255,255,255,.08);border:1px solid var(--navy-700);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">GoBTC Pay</span>
+                  <span style="color:var(--red-400)">→</span>
+                  <span style="background:var(--red-500);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">Agent</span>
+                </span>
+                <span style="display:block;font-size:14.5px;line-height:1.5;color:#fff">Payment ID and sats amount — price locked 30 min</span>
+              </span>
+            </div>
+            <div style="display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start;padding:10px 0;border-top:1px solid var(--navy-800)">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--navy-500);padding-top:4px">06</span>
+              <span>
+                <span style="display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">
+                  <span style="background:var(--red-500);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">Agent</span>
+                  <span style="color:var(--red-400)">→</span>
+                  <span style="background:rgba(255,255,255,.08);border:1px solid var(--navy-700);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">GoBTC Pay</span>
+                </span>
+                <span style="display:block;font-size:14.5px;line-height:1.5;color:#fff">Verify payee and amount, sign (1 of 2)</span>
+              </span>
+            </div>
+            <div style="display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start;padding:10px 0;border-top:1px solid var(--navy-800)">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--navy-500);padding-top:4px">07</span>
+              <span>
+                <span style="display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">
+                  <span style="background:rgba(255,255,255,.08);border:1px solid var(--navy-700);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">GoBTC Pay</span>
+                  <span style="color:var(--red-400)">→</span>
+                  <span style="background:rgba(255,255,255,.08);border:1px solid var(--navy-700);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">Bursar</span>
+                  <span style="background:var(--success-100);color:#12734F;padding:3px 9px;border-radius:var(--radius-pill)">Paid</span>
+                </span>
+                <span style="display:block;font-size:14.5px;line-height:1.5;color:#fff">Co-sign — status “paid” in seconds</span>
+              </span>
+            </div>
+            <div style="display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start;padding:10px 0;border-top:1px solid var(--navy-800)">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--navy-500);padding-top:4px">08</span>
+              <span>
+                <span style="display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">
+                  <span style="background:var(--red-500);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">Agent</span>
+                  <span style="color:var(--red-400)">→</span>
+                  <span style="background:rgba(255,255,255,.08);border:1px solid var(--navy-700);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">Parent</span>
+                </span>
+                <span style="display:block;font-size:14.5px;line-height:1.5;color:#fff">Receipt and proof</span>
+              </span>
+            </div>
+            <div style="display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start;padding:10px 0;border-top:1px solid var(--navy-800)">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--navy-500);padding-top:4px">09</span>
+              <span>
+                <span style="display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">
+                  <span style="background:rgba(255,255,255,.08);border:1px solid var(--navy-700);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">GoBTC Pay</span>
+                  <span style="color:var(--red-400)">→</span>
+                  <span style="background:rgba(255,255,255,.08);border:1px solid var(--navy-700);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">Bursar</span>
+                  <span style="background:var(--success-100);color:#12734F;padding:3px 9px;border-radius:var(--radius-pill)">Settled</span>
+                </span>
+                <span style="display:block;font-size:14.5px;line-height:1.5;color:#fff">Batch settlement on Bitcoin — about 12 h</span>
+              </span>
+            </div>
+            <div style="display:grid;grid-template-columns:30px 1fr;gap:14px;align-items:start;padding:10px 0;border-top:1px solid var(--navy-800)">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--navy-500);padding-top:4px">10</span>
+              <span>
+                <span style="display:flex;gap:7px;align-items:center;flex-wrap:wrap;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px">
+                  <span style="background:rgba(255,255,255,.08);border:1px solid var(--navy-700);color:#fff;padding:3px 9px;border-radius:var(--radius-pill)">Bursar</span>
+                  <span style="color:var(--red-400)">↻</span>
+                </span>
+                <span style="display:block;font-size:14.5px;line-height:1.5;color:#fff">Convert BTC to CAD</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="flows" style="padding-top:52px">
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
+          <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--red-500)">05</span>
+          <h2 style="font-family:var(--font-display);font-size:29px;font-weight:700;letter-spacing:-0.025em;color:var(--text-strong);margin:0">Core flows</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:18px">
+          <div style="border-top:1px solid var(--border-subtle);padding-top:16px">
+            <h3 style="font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-0.015em;color:var(--text-strong);margin:0 0 8px">Set up a family</h3>
+            <p style="font-size:15.5px;line-height:1.65;margin:0;max-width:68ch;text-wrap:pretty">Parent creates the family, adds the student, picks the school from a verified list (which pins the school’s GoBTC merchant ID), and sets the cap per term, the payment window and autopay. The family wallet is created and its address shown.</p>
+          </div>
+          <div style="border-top:1px solid var(--border-subtle);padding-top:16px">
+            <h3 style="font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-0.015em;color:var(--text-strong);margin:0 0 8px">Fund the wallet</h3>
+            <p style="font-size:15.5px;line-height:1.65;margin:0;max-width:68ch;text-wrap:pretty">Parent sends BTC from any wallet. The app shows the spendable balance and how much the next invoice needs, including the network fee.</p>
+          </div>
+          <div style="border-top:1px solid var(--border-subtle);padding-top:16px">
+            <h3 style="font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-0.015em;color:var(--text-strong);margin:0 0 12px">Pay an invoice (happy path)</h3>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start">
+                <span style="font-family:var(--font-mono);font-size:12px;color:var(--red-500);padding-top:3px">01</span>
+                <span style="font-size:15.5px;line-height:1.6">Student uploads the invoice (PDF, photo or text).</span>
+              </div>
+              <div style="display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start">
+                <span style="font-family:var(--font-mono);font-size:12px;color:var(--red-500);padding-top:3px">02</span>
+                <span style="font-size:15.5px;line-height:1.6">Agent extracts payee, merchant ID, student number, term, amount, currency, due date and reference.</span>
+              </div>
+              <div style="display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start">
+                <span style="font-family:var(--font-mono);font-size:12px;color:var(--red-500);padding-top:3px">03</span>
+                <span style="font-size:15.5px;line-height:1.6">Rule check runs in code: approved payee, student match, currency, cap per term (counting what is already committed), payment window, autopay.</span>
+              </div>
+              <div style="display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start">
+                <span style="font-family:var(--font-mono);font-size:12px;color:var(--red-500);padding-top:3px">04</span>
+                <span style="font-size:15.5px;line-height:1.6">The bursar’s payment request is created with an idempotency key derived from the invoice.</span>
+              </div>
+              <div style="display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start">
+                <span style="font-family:var(--font-mono);font-size:12px;color:var(--red-500);padding-top:3px">05</span>
+                <span style="font-size:15.5px;line-height:1.6">Agent reads the request from the payer side and re-verifies payee and amount; checks balance; builds, verifies and signs the transaction; submits.</span>
+              </div>
+              <div style="display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start">
+                <span style="font-family:var(--font-mono);font-size:12px;color:var(--red-500);padding-top:3px">06</span>
+                <span style="font-size:15.5px;line-height:1.6">GoBTC co-signs → <strong style="font-weight:600;color:var(--text-strong)">paid</strong>. Parent and student get proof. Settlement follows.</span>
+              </div>
+            </div>
+          </div>
+          <div style="border-top:1px solid var(--border-subtle);padding-top:16px">
+            <h3 style="font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-0.015em;color:var(--text-strong);margin:0 0 8px">Refuse</h3>
+            <p style="font-size:15.5px;line-height:1.65;margin:0;max-width:68ch;text-wrap:pretty">Unapproved payee, wrong student or currency, over the cap, too early, past due, or autopay off → nothing is signed. The agent explains which rule failed and flags any instructions hidden inside the invoice.</p>
+          </div>
+          <div style="border-top:1px solid var(--border-subtle);padding-top:16px">
+            <h3 style="font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-0.015em;color:var(--text-strong);margin:0 0 12px">Exceptions</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px">
+              <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:14px 16px">
+                <div style="font-size:14.5px;font-weight:600;color:var(--text-strong);margin-bottom:4px">Wallet short of funds</div>
+                <p style="font-size:14px;line-height:1.55;color:var(--text-muted);margin:0">Status “needs wallet funds”, shows the sats required, retry later.</p>
+              </div>
+              <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:14px 16px">
+                <div style="font-size:14.5px;font-weight:600;color:var(--text-strong);margin-bottom:4px">Payment request expired</div>
+                <p style="font-size:14px;line-height:1.55;color:var(--text-muted);margin:0">A new attempt with a new key; the old request can never be paid.</p>
+              </div>
+              <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:14px 16px">
+                <div style="font-size:14.5px;font-weight:600;color:var(--text-strong);margin-bottom:4px">Network error after submit</div>
+                <p style="font-size:14px;line-height:1.55;color:var(--text-muted);margin:0">Status “unknown”; reconcile with GoBTC, never resubmit.</p>
+              </div>
+              <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:14px 16px">
+                <div style="font-size:14.5px;font-weight:600;color:var(--text-strong);margin-bottom:4px">Same invoice uploaded twice</div>
+                <p style="font-size:14px;line-height:1.55;color:var(--text-muted);margin:0">Reported as a duplicate; nothing paid.</p>
+              </div>
+              <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:14px 16px">
+                <div style="font-size:14.5px;font-weight:600;color:var(--text-strong);margin-bottom:4px">Model declines or fails</div>
+                <p style="font-size:14px;line-height:1.55;color:var(--text-muted);margin:0">Invoice goes to human review.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reqs" style="padding-top:52px">
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
+          <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--red-500)">06</span>
+          <h2 style="font-family:var(--font-display);font-size:29px;font-weight:700;letter-spacing:-0.025em;color:var(--text-strong);margin:0">Requirements</h2>
+        </div>
+        <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-md);overflow:hidden">
+          <div style="display:grid;grid-template-columns:44px 1fr 74px 96px;gap:14px;padding:11px 18px;background:var(--slate-100);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)">
+            <div>ID</div><div>Requirement</div><div>Priority</div><div>Demo</div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px 1fr 74px 96px;gap:14px;padding:14px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div style="font-family:var(--font-mono);font-size:13px;color:var(--navy-900);font-weight:500">R1</div>
+            <div>Extract invoice fields from PDF, image or text; unknown fields stay empty, never guessed</div>
+            <div style="font-weight:600;color:var(--red-600);font-size:13.5px">Must</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--success-100);color:#12734F;white-space:nowrap">Built</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px 1fr 74px 96px;gap:14px;padding:14px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div style="font-family:var(--font-mono);font-size:13px;color:var(--navy-900);font-weight:500">R2</div>
+            <div>Spending rules enforced in code, re-checked immediately before paying; the model cannot override them</div>
+            <div style="font-weight:600;color:var(--red-600);font-size:13.5px">Must</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--success-100);color:#12734F;white-space:nowrap">Built</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px 1fr 74px 96px;gap:14px;padding:14px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div style="font-family:var(--font-mono);font-size:13px;color:var(--navy-900);font-weight:500">R3</div>
+            <div>Pay only the school’s pinned merchant ID; a payee change must come from the parent, never the invoice</div>
+            <div style="font-weight:600;color:var(--red-600);font-size:13.5px">Must</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--success-100);color:#12734F;white-space:nowrap">Built</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px 1fr 74px 96px;gap:14px;padding:14px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div style="font-family:var(--font-mono);font-size:13px;color:var(--navy-900);font-weight:500">R4</div>
+            <div>At most one payment per invoice: idempotency key, atomic claim, duplicate detection</div>
+            <div style="font-weight:600;color:var(--red-600);font-size:13.5px">Must</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--success-100);color:#12734F;white-space:nowrap">Built</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px 1fr 74px 96px;gap:14px;padding:14px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div style="font-family:var(--font-mono);font-size:13px;color:var(--navy-900);font-weight:500">R5</div>
+            <div>Verify the payment request and the transaction amount before signing</div>
+            <div style="font-weight:600;color:var(--red-600);font-size:13.5px">Must</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--success-100);color:#12734F;white-space:nowrap">Built</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px 1fr 74px 96px;gap:14px;padding:14px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div style="font-family:var(--font-mono);font-size:13px;color:var(--navy-900);font-weight:500">R6</div>
+            <div>Signing key never leaves the server; submitted-but-unknown payments are reconciled, not retried</div>
+            <div style="font-weight:600;color:var(--red-600);font-size:13.5px">Must</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--success-100);color:#12734F;white-space:nowrap">Built</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px 1fr 74px 96px;gap:14px;padding:14px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div style="font-family:var(--font-mono);font-size:13px;color:var(--navy-900);font-weight:500">R7</div>
+            <div>Separate “paid” and “settled” states; proof with payment ID and transaction IDs</div>
+            <div style="font-weight:600;color:var(--red-600);font-size:13.5px">Must</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--success-100);color:#12734F;white-space:nowrap">Built</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px 1fr 74px 96px;gap:14px;padding:14px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div style="font-family:var(--font-mono);font-size:13px;color:var(--navy-900);font-weight:500">R8</div>
+            <div>Live timeline of every agent step and decision</div>
+            <div style="font-weight:600;color:var(--text-muted);font-size:13.5px">Should</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--success-100);color:#12734F;white-space:nowrap">Built</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px 1fr 74px 96px;gap:14px;padding:14px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div style="font-family:var(--font-mono);font-size:13px;color:var(--navy-900);font-weight:500">R9</div>
+            <div>CAD conversion view: locked rate, live rate, fee, net to school</div>
+            <div style="font-weight:600;color:var(--text-muted);font-size:13.5px">Should</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--warning-100);color:#7A4F09;white-space:nowrap">Simulated</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px 1fr 74px 96px;gap:14px;padding:14px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div style="font-family:var(--font-mono);font-size:13px;color:var(--navy-900);font-weight:500">R10</div>
+            <div>Parent approval by phone for first payment to a new school or amounts above a threshold</div>
+            <div style="font-weight:600;color:var(--text-muted);font-size:13.5px">Should</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--slate-100);color:var(--navy-900);border:1px solid var(--border-subtle);white-space:nowrap">Planned</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px 1fr 74px 96px;gap:14px;padding:14px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div style="font-family:var(--font-mono);font-size:13px;color:var(--navy-900);font-weight:500">R11</div>
+            <div>Deadline reminders and low-balance alerts to parent and student</div>
+            <div style="font-weight:600;color:var(--text-muted);font-size:13.5px">Should</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--slate-100);color:var(--navy-900);border:1px solid var(--border-subtle);white-space:nowrap">Planned</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px 1fr 74px 96px;gap:14px;padding:14px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div style="font-family:var(--font-mono);font-size:13px;color:var(--navy-900);font-weight:500">R12</div>
+            <div>Multiple families, students and schools; accounts and sign-in</div>
+            <div style="font-weight:600;color:var(--text-faint);font-size:13.5px">Later</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--slate-100);color:var(--navy-900);border:1px solid var(--border-subtle);white-space:nowrap">Planned</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:44px 1fr 74px 96px;gap:14px;padding:14px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div style="font-family:var(--font-mono);font-size:13px;color:var(--navy-900);font-weight:500">R13</div>
+            <div>Real off-ramp so the school receives CAD directly</div>
+            <div style="font-weight:600;color:var(--text-faint);font-size:13.5px">Later</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--slate-100);color:var(--navy-900);border:1px solid var(--border-subtle);white-space:nowrap">Planned</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="states" style="padding-top:52px">
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
+          <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--red-500)">07</span>
+          <h2 style="font-family:var(--font-display);font-size:29px;font-weight:700;letter-spacing:-0.025em;color:var(--text-strong);margin:0">Paid vs. settled</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:18px">
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-top:3px solid var(--success-500);border-radius:var(--radius-md);padding:20px 22px">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px">
+              <span style="font-family:var(--font-display);font-size:20px;font-weight:700;letter-spacing:-0.02em;color:var(--text-strong)">Paid</span>
+              <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#12734F">Seconds</span>
+            </div>
+            <p style="font-size:14.5px;line-height:1.6;color:var(--text-body);margin:0 0 12px;text-wrap:pretty">GoBTC accepted the agent’s signature and committed to co-sign. The coins can’t move without GoBTC, so they can’t be spent elsewhere.</p>
+            <p style="font-size:14px;line-height:1.55;color:var(--text-muted);margin:0"><span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);display:block;margin-bottom:4px">Product does</span>Marks tuition <em>committed</em>; tells the family the deadline is met</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-top:3px solid var(--navy-900);border-radius:var(--radius-md);padding:20px 22px">
+            <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:10px">
+              <span style="font-family:var(--font-display);font-size:20px;font-weight:700;letter-spacing:-0.02em;color:var(--text-strong)">Settled</span>
+              <span style="font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)">~12 hours</span>
+            </div>
+            <p style="font-size:14.5px;line-height:1.6;color:var(--text-body);margin:0 0 12px;text-wrap:pretty">Transaction confirmed on Bitcoin; <span style="font-family:var(--font-mono);font-size:13px">paidAt</span> and transaction IDs present. About 12 hours on average, sometimes days.</p>
+            <p style="font-size:14px;line-height:1.55;color:var(--text-muted);margin:0"><span style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint);display:block;margin-bottom:4px">Product does</span>Issues the final receipt</p>
+          </div>
+        </div>
+        <div style="background:var(--navy-900);color:#fff;border-radius:var(--radius-md);padding:20px 24px;border-left:3px solid var(--red-500)">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red-400);margin-bottom:8px">Policy</div>
+          <p style="font-size:15.5px;line-height:1.6;margin:0;color:#fff;max-width:64ch;text-wrap:pretty">Acting on “paid” is right for tuition because the co-signing guarantee removes double-spend risk, and the family’s real concern is the deadline. The final receipt waits for settlement.</p>
+        </div>
+      </section>
+
+      <section id="fx" style="padding-top:52px">
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
+          <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--red-500)">08</span>
+          <h2 style="font-family:var(--font-display);font-size:29px;font-weight:700;letter-spacing:-0.025em;color:var(--text-strong);margin:0">Exchange rate and fees</h2>
+        </div>
+        <p style="font-size:16px;line-height:1.65;margin:0 0 22px;max-width:68ch;text-wrap:pretty">The university asks for a fixed CAD amount. GoBTC converts it to sats at the current price and holds that price for 30 minutes. The family pays exactly those sats.</p>
+        <h3 style="font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-0.015em;color:var(--text-strong);margin:0 0 12px">Worked example at real scale</h3>
+        <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-md);overflow:hidden;margin-bottom:26px">
+          <div style="display:flex;justify-content:space-between;gap:18px;padding:13px 18px;font-size:14.5px;line-height:1.5">
+            <span>Invoice</span>
+            <span style="font-family:var(--font-mono);font-variant-numeric:tabular-nums;color:var(--navy-900);white-space:nowrap">CAD 8,450.00</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:18px;padding:13px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.5">
+            <span>BTC price locked at request</span>
+            <span style="font-family:var(--font-mono);font-variant-numeric:tabular-nums;color:var(--navy-900);white-space:nowrap">CAD 105,427</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:18px;padding:13px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.5">
+            <span>Family pays</span>
+            <span style="text-align:right"><span style="font-family:var(--font-mono);font-variant-numeric:tabular-nums;color:var(--navy-900);white-space:nowrap">8,015,025 sats</span><span style="display:block;font-size:12.5px;color:var(--text-muted);font-family:var(--font-mono)">0.08015 BTC</span></span>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:18px;padding:13px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.5">
+            <span>Bitcoin network fee (paid by family)</span>
+            <span style="text-align:right"><span style="font-family:var(--font-mono);font-variant-numeric:tabular-nums;color:var(--navy-900);white-space:nowrap">≈ 193 sats</span><span style="display:block;font-size:12.5px;color:var(--text-muted);font-family:var(--font-mono)">at 1 sat/vB</span></span>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:18px;padding:13px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.5">
+            <span>If BTC is 0.5% lower when the school converts</span>
+            <span style="font-family:var(--font-mono);font-variant-numeric:tabular-nums;color:var(--navy-900);white-space:nowrap">CAD 8,407.75</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:18px;padding:13px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.5">
+            <span>Off-ramp fee (assumed 1%)</span>
+            <span style="font-family:var(--font-mono);font-variant-numeric:tabular-nums;color:var(--red-600);white-space:nowrap">− CAD 84.08</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:18px;padding:16px 18px;border-top:1px solid var(--border-strong);background:var(--slate-100);font-size:15px;font-weight:600;color:var(--text-strong)">
+            <span>School receives</span>
+            <span style="text-align:right"><span style="font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap">CAD 8,323.67</span><span style="display:block;font-size:12.5px;color:var(--red-600);font-family:var(--font-mono);font-weight:400">CAD 126.33 short</span></span>
+          </div>
+        </div>
+        <h3 style="font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-0.015em;color:var(--text-strong);margin:0 0 12px">Compared with how families pay today</h3>
+        <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-md);overflow-x:auto;margin-bottom:14px">
+          <table style="width:100%;min-width:560px;border-collapse:collapse;font-size:14px;line-height:1.5">
+            <thead><tr style="background:var(--slate-100);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);text-align:left">
+              <th style="padding:11px 16px;font-weight:500">Route</th><th style="padding:11px 16px;font-weight:500">Typical all-in cost</th><th style="padding:11px 16px;font-weight:500">Time</th>
+            </tr></thead>
+            <tbody>
+              <tr style="border-top:1px solid var(--border-subtle)"><td style="padding:12px 16px;font-weight:600">Bank wire</td><td style="padding:12px 16px"><span style="font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap">CAD 25–50</span> fee + bank FX margin (often 2–4%) + intermediary fees</td><td style="padding:12px 16px">1–5 days</td></tr>
+              <tr style="border-top:1px solid var(--border-subtle)"><td style="padding:12px 16px;font-weight:600">Flywire</td><td style="padding:12px 16px">≈ <span style="font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap">2–3%</span> in the exchange rate</td><td style="padding:12px 16px">1–3 days</td></tr>
+              <tr style="border-top:1px solid var(--border-subtle)"><td style="padding:12px 16px;font-weight:600">Convera</td><td style="padding:12px 16px">≈ <span style="font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap">1.5–2%</span> in the exchange rate</td><td style="padding:12px 16px">1–3 days</td></tr>
+              <tr style="border-top:1px solid var(--border-subtle);background:var(--red-50)"><td style="padding:12px 16px;font-weight:600">TuitionPilot on Bitcoin</td><td style="padding:12px 16px">buy BTC at home (≈ <span style="font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap">1–3%</span>) + network fee (cents) + school off-ramp (<span style="font-family:var(--font-mono);font-variant-numeric:tabular-nums;white-space:nowrap">0.5–1.6%</span>, higher on instant-sell)</td><td style="padding:12px 16px">seconds to “paid”, ≈ 12 h to settle</td></tr>
+              <tr style="border-top:1px solid var(--border-subtle)"><td style="padding:12px 16px;font-weight:600">TuitionPilot on stablecoins <span style="font-family:var(--font-mono);font-size:10.5px;color:var(--text-faint)">next</span></td><td style="padding:12px 16px">no price risk in transit; only on- and off-ramp spreads</td><td style="padding:12px 16px">minutes</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="background:var(--navy-900);color:#fff;border-radius:var(--radius-md);padding:18px 22px;border-left:3px solid var(--red-500);margin-bottom:26px">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red-400);margin-bottom:8px">Conclusion</div>
+          <p style="font-size:15px;line-height:1.6;margin:0;max-width:66ch;text-wrap:pretty">We do not claim to be cheaper, and we cannot guarantee the best exchange rate on a volatile asset. We claim speed, access where wires fail, and a rate that is locked at request and shown to everyone. A stablecoin rail is what makes a firm CAD amount possible.</p>
+        </div>
+        <h3 style="font-family:var(--font-display);font-size:18px;font-weight:700;letter-spacing:-0.015em;color:var(--text-strong);margin:0 0 12px">Who carries the risk</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:22px">
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:16px 18px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:5px">Family</div>
+            <p style="font-size:14.5px;line-height:1.6;color:var(--text-muted);margin:0">Price moves while BTC waits in the family wallet before the invoice is paid. Bitcoin’s volatility was about 48% annualised in 2025, with a 36% drop in October — so the wallet should be topped up just before a due date, not months ahead.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:16px 18px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:5px">University</div>
+            <p style="font-size:14.5px;line-height:1.6;color:var(--text-muted);margin:0">Price moves between “paid” and conversion, plus the off-ramp fee. Converting immediately keeps this to minutes.</p>
+          </div>
+        </div>
+        <div style="background:var(--red-50);border:1px solid var(--red-200);border-left:3px solid var(--red-500);border-radius:var(--radius-md);padding:18px 22px;margin-bottom:18px">
+          <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--red-600);margin-bottom:8px">Proposed</div>
+          <p style="font-size:15.5px;line-height:1.6;margin:0;max-width:64ch;text-wrap:pretty">Add a buffer (for example 1–2%) to each payment so the school always receives the full CAD amount, and refund any surplus to the family wallet. Alternatively, encourage just-in-time top-ups so the family holds BTC for days, not months.</p>
+        </div>
+        <p style="font-size:16px;line-height:1.65;margin:0;max-width:68ch;text-wrap:pretty">In the demo, amounts are scaled 1 : 5,000 (the CAD 8,450 invoice is paid as <span style="font-family:var(--font-mono);color:var(--navy-900)">CAD 1.69</span> ≈ <span style="font-family:var(--font-mono);color:var(--navy-900)">1,603 sats</span>), and the conversion uses the live mempool.space price with a 1% fee.</p>
+      </section>
+
+      <section id="biz" style="padding-top:52px">
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
+          <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--red-500)">09</span>
+          <h2 style="font-family:var(--font-display);font-size:29px;font-weight:700;letter-spacing:-0.025em;color:var(--text-strong);margin:0">Business model</h2>
+        </div>
+        <p style="font-size:16px;line-height:1.65;margin:0 0 16px;max-width:68ch">Hypotheses to validate — not decided.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px">
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:16px 18px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:5px">Family fee per payment</div>
+            <p style="font-size:14.5px;line-height:1.6;color:var(--text-muted);margin:0">A small percentage with a minimum. Priced for access and protection — families whose wire failed compare us with a late fee, not with Convera.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:16px 18px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:5px">Subscription</div>
+            <p style="font-size:14.5px;line-height:1.6;color:var(--text-muted);margin:0">Monthly fee for families paying tuition plus a living allowance.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:16px 18px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:5px">Partner side</div>
+            <p style="font-size:14.5px;line-height:1.6;color:var(--text-muted);margin:0">Universities and education agents who want faster, verifiable international payments and fewer holds.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:16px 18px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:5px">Beachhead</div>
+            <p style="font-size:14.5px;line-height:1.6;color:var(--text-muted);margin:0">One corridor first: Nigeria → Canada, where FX rationing and stablecoin use are both well documented.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="risk" style="padding-top:52px">
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
+          <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--red-500)">10</span>
+          <h2 style="font-family:var(--font-display);font-size:29px;font-weight:700;letter-spacing:-0.025em;color:var(--text-strong);margin:0">Compliance and risk</h2>
+        </div>
+        <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-md);overflow:hidden">
+          <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:18px;padding:11px 18px;background:var(--slate-100);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)">
+            <div>Risk</div><div>Mitigation</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div style="font-weight:600;color:var(--text-strong)">Canada treats dealing in virtual currency as a money services business</div>
+            <div style="color:var(--text-muted)">Register with FINTRAC before operating (written compliance programme required since March 2026; travel-rule data from CAD 1,000; large-transaction reports from CAD 10,000) — or operate through a licensed partner. KYC on parents.</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div style="font-weight:600;color:var(--text-strong)">Sanctions and AML</div>
+            <div style="color:var(--text-muted)">Screen senders and countries; block sanctioned jurisdictions; travel-rule data where required</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div style="font-weight:600;color:var(--text-strong)">Invoice fraud and prompt injection</div>
+            <div style="color:var(--text-muted)">Payee pinned by the parent; rules in code; invoice text treated as data; suspicious content flagged</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div style="font-weight:600;color:var(--text-strong)">AI misreads an invoice</div>
+            <div style="color:var(--text-muted)">Rule check catches mismatches; human review for new schools and large amounts</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div style="font-weight:600;color:var(--text-strong)">Agent key compromise</div>
+            <div style="color:var(--text-muted)">Key in a managed secret store or HSM; 2-of-3 wallet with recovery key; only rule-approved payment requests are signed</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div style="font-weight:600;color:var(--text-strong)">Price volatility</div>
+            <div style="color:var(--text-muted)">Rate locked at request; immediate conversion; buffer option; stablecoin rail next</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div style="font-weight:600;color:var(--text-strong)">Discount-tuition scams paid outside the product</div>
+            <div style="color:var(--text-muted)">Out of scope: we only pay invoices from the pinned bursar. Explain the pattern to families during onboarding.</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div style="font-weight:600;color:var(--text-strong)">Crypto-funded tuition may face more questions in study-permit checks</div>
+            <div style="color:var(--text-muted)">Exportable receipts with payment IDs, rates and timestamps; validate with immigration advisers before launch.</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55">
+            <div style="font-weight:600;color:var(--text-strong)">Universities won’t hold crypto</div>
+            <div style="color:var(--text-muted)">Never ask them to: pay CAD through an off-ramp partner (Flywire already accepts USDC/USDT and settles in local currency).</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="demo" style="padding-top:52px">
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
+          <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--red-500)">11</span>
+          <h2 style="font-family:var(--font-display);font-size:29px;font-weight:700;letter-spacing:-0.025em;color:var(--text-strong);margin:0">Demo scope</h2>
+        </div>
+        <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-md);overflow:hidden">
+          <div style="display:grid;grid-template-columns:1fr 104px;gap:18px;padding:11px 18px;background:var(--slate-100);font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)">
+            <div>Part</div><div>Status</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 104px;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div>Bitcoin mainnet payment on GoBTC’s instant rail from the agent’s own 2-of-3 wallet</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--success-100);color:#12734F;white-space:nowrap">Real</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 104px;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div>Invoice reading with Claude; rule check; double-payment protection; paid/settled tracking</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--success-100);color:#12734F;white-space:nowrap">Real</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 104px;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div>The university — our own GoBTC merchant account plays the bursar</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--warning-100);color:#7A4F09;white-space:nowrap">Mocked</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 104px;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div>Amounts scaled 1 : 5,000</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--warning-100);color:#7A4F09;white-space:nowrap">Mocked</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 104px;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div>BTC → CAD conversion and bank payout</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--warning-100);color:#7A4F09;white-space:nowrap">Simulated</span></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 104px;gap:18px;padding:15px 18px;border-top:1px solid var(--border-subtle);font-size:14.5px;line-height:1.55;align-items:start">
+            <div>One demo family; wallet funded by the hackathon grant in place of the parent</div>
+            <div><span style="font-family:var(--font-mono);font-size:11px;padding:4px 9px;border-radius:var(--radius-pill);background:var(--warning-100);color:#7A4F09;white-space:nowrap">Mocked</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="metrics" style="padding-top:52px">
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
+          <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--red-500)">12</span>
+          <h2 style="font-family:var(--font-display);font-size:29px;font-weight:700;letter-spacing:-0.025em;color:var(--text-strong);margin:0">Success metrics</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:16px 18px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:4px">On-time rate</div>
+            <p style="font-size:14px;line-height:1.55;color:var(--text-muted);margin:0">Invoices paid before the due date.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:16px 18px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:4px">Time to paid</div>
+            <p style="font-size:14px;line-height:1.55;color:var(--text-muted);margin:0">From invoice upload to “paid”.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:16px 18px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:4px">Duplicate payments</div>
+            <p style="font-size:14px;line-height:1.55;color:var(--text-muted);margin:0">Target zero.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:16px 18px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:4px">Fraud blocked</div>
+            <p style="font-size:14px;line-height:1.55;color:var(--text-muted);margin:0">Refused invoices later confirmed fake.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:16px 18px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:4px">Access and cost</div>
+            <p style="font-size:14px;line-height:1.55;color:var(--text-muted);margin:0">Payments completed where a wire failed or wasn’t possible; all-in cost shown next to the family’s alternative.</p>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-radius:var(--radius-sm);padding:16px 18px">
+            <div style="font-size:15px;font-weight:600;color:var(--text-strong);margin-bottom:4px">Amount received</div>
+            <p style="font-size:14px;line-height:1.55;color:var(--text-muted);margin:0">CAD the school received versus requested.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="roadmap" style="padding-top:52px">
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
+          <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--red-500)">13</span>
+          <h2 style="font-family:var(--font-display);font-size:29px;font-weight:700;letter-spacing:-0.025em;color:var(--text-strong);margin:0">Roadmap</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px">
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-top:3px solid var(--red-500);border-radius:var(--radius-md);padding:18px 20px">
+            <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--red-600);margin-bottom:12px">Now · hackathon</div>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.5">
+              <div>One family, one school</div>
+              <div>Real mainnet payment and proof</div>
+              <div>Refusal, duplicate and empty-wallet paths</div>
+              <div>Simulated CAD conversion</div>
+            </div>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-top:3px solid var(--navy-900);border-radius:var(--radius-md);padding:18px 20px">
+            <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy-900);margin-bottom:12px">Next</div>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.5;color:var(--text-muted)">
+              <div>Accounts; many families</div>
+              <div>Parent approval on phone</div>
+              <div>Reminders and low-balance alerts</div>
+              <div>Off-ramp partner for real CAD payout</div>
+              <div>Stablecoin rail (USDT / USDC)</div>
+              <div>First corridor: Nigeria → Canada</div>
+            </div>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border-subtle);border-top:3px solid var(--slate-300);border-radius:var(--radius-md);padding:18px 20px">
+            <div style="font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px">Later</div>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:14.5px;line-height:1.5;color:var(--text-muted)">
+              <div>Verified school directory</div>
+              <div>Living allowance for students</div>
+              <div>More corridors and local payment methods</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+        <section id="open" style="padding-top:52px">
+          <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:18px">
+            <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;color:var(--red-500)">14</span>
+            <h2 style="font-family:var(--font-display);font-size:29px;font-weight:700;letter-spacing:-0.025em;color:var(--text-strong);margin:0">Open questions</h2>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0">
+            <div style="display:grid;grid-template-columns:32px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--border-subtle);font-size:15.5px;line-height:1.6">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--red-500);padding-top:4px">Q1</span>
+              <span>Who absorbs the conversion fee and price movement: family (buffer), school, or TuitionPilot?</span>
+            </div>
+            <div style="display:grid;grid-template-columns:32px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--border-subtle);font-size:15.5px;line-height:1.6">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--red-500);padding-top:4px">Q2</span>
+              <span>How do schools join — do we onboard them to GoBTC, or pay through an off-ramp partner on their behalf?</span>
+            </div>
+            <div style="display:grid;grid-template-columns:32px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--border-subtle);font-size:15.5px;line-height:1.6">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--red-500);padding-top:4px">Q3</span>
+              <span>Who holds the recovery key for the family wallet?</span>
+            </div>
+            <div style="display:grid;grid-template-columns:32px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--border-subtle);font-size:15.5px;line-height:1.6">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--red-500);padding-top:4px">Q4</span>
+              <span>Which off-ramp partner pays the school in CAD — a licensed exchange, or an education-payments company that already takes stablecoins?</span>
+            </div>
+            <div style="display:grid;grid-template-columns:32px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--border-subtle);font-size:15.5px;line-height:1.6">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--red-500);padding-top:4px">Q5</span>
+              <span>What fee can families accept compared with what they pay today?</span>
+            </div>
+            <div style="display:grid;grid-template-columns:32px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--border-subtle);font-size:15.5px;line-height:1.6">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--red-500);padding-top:4px">Q6</span>
+              <span>Do Nigerian families actually hit the wire problem at the moment of payment? Validate with 10 families and 2 international-student offices.</span>
+            </div>
+            <div style="display:grid;grid-template-columns:32px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--border-subtle);font-size:15.5px;line-height:1.6">
+              <span style="font-family:var(--font-mono);font-size:12px;color:var(--red-500);padding-top:4px">Q7</span>
+              <span>Will immigration officers accept crypto-funded tuition receipts as proof of payment?</span>
+            </div>
+          </div>
+        </section>
+      
+
+      <footer style="margin-top:60px;padding-top:20px;border-top:1px solid var(--border-subtle);font-size:13px;line-height:1.6;color:var(--text-muted)">TuitionPilot · Novalycs · Draft for Agentic Commerce Pioneers Edition II. Figures in the worked example use the BTC price seen on 16 Sep 2026; fee ranges come from public sources and vary by provider and corridor.
+        <div style="margin-top:10px">Sources: <a href="https://ibrlive.com/international-money-transfer/flywire-vs-convera/" target="_blank" rel="noreferrer">Flywire vs Convera margins</a> · <a href="https://help.flywire.com/hc/en-us/articles/33745859809309-How-to-Pay-with-Stablecoins-USDC-USDT" target="_blank" rel="noreferrer">Flywire stablecoin payments</a> · <a href="https://monitor.icef.com/2016/03/nigeria-tightens-foreign-exchange-controls-to-limit-use-for-study-abroad/" target="_blank" rel="noreferrer">Nigeria FX controls for study abroad</a> · <a href="https://www.cbc.ca/news/gopublic/tuition-scam-9.7115857" target="_blank" rel="noreferrer">CBC: CAD 37K tuition scam</a> · <a href="https://money.ca/news/canada-international-students-tuition-fraud-cbsa-charges" target="_blank" rel="noreferrer">CAD 126K tuition fraud charges</a> · <a href="https://www.imf.org/en/news/articles/2026/06/16/stablecoins-in-nigeria" target="_blank" rel="noreferrer">IMF: stablecoins in Nigeria</a> · <a href="https://www.chainalysis.com/reports/2025-geo-crypto-report/" target="_blank" rel="noreferrer">Chainalysis 2025 geography report</a> · <a href="https://www.ratehub.ca/investing/best-crypto-exchanges" target="_blank" rel="noreferrer">Canadian exchange fees</a> · <a href="https://www.livevolatile.com/blog/bitcoin-volatility-analysis-2026" target="_blank" rel="noreferrer">Bitcoin volatility</a> · <a href="https://fintrac-canafe.canada.ca/msb-esm/msb-eng" target="_blank" rel="noreferrer">FINTRAC: money services businesses</a></div></footer>
+    </main>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 96" role="img" aria-label="TuitionPilot — A Novalycs product">
+  <style>.w{font-family:'Space Grotesk','Segoe UI',system-ui,sans-serif;font-weight:700;letter-spacing:-0.03em}.e{font-family:'IBM Plex Mono',ui-monospace,monospace;letter-spacing:0.2em}</style>
+  <g transform="translate(0 12) scale(1.125)"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></g>
+  <text class="w" x="96" y="56" font-size="44" fill="#0A0B3B">TuitionPilot</text>
+  <text class="e" x="98" y="80" font-size="11" fill="#6B7388">A NOVALYCS PRODUCT</text>
+</svg>

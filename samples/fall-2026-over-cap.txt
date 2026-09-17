@@ -1,0 +1,23 @@
+NORTHSHORE UNIVERSITY — OFFICE OF THE BURSAR
+Tuition Invoice
+
+Invoice No.:        NSU-INV-2026-FA-771990
+Statement date:     2026-09-14
+Student:            Leila Ahmadi
+Student number:     NSU-2026-48213
+Term:               Fall 2026
+
+Charges
+  Tuition — international, full-time (15 credits)     CAD  8,120.00
+  Co-op program fee                                     CAD  2,950.00
+  Residence deposit                                     CAD  1,330.00
+                                                        -----------
+  TOTAL DUE                                             CAD 12,400.00
+
+Payment due date:   2026-10-03
+
+How to pay
+  Pay with Bitcoin via GoBTC Pay
+  Payee:               Northshore University Bursar
+  GoBTC merchant ID:   {{MERCHANT_ID}}
+  Payment reference:   NSU-INV-2026-FA-771990

@@ -1,0 +1,198 @@
+/* Novalycs design system tokens, copied from the design package. Fonts come from next/font in app/layout.tsx. */
+/* ============================================================
+   Novalycs — Color System
+   Brand: deep navy (#0A0B3B) ground + precise red (#D2102C) accent.
+   Cool slate neutrals. Red is used sparingly — like the logo.
+   ============================================================ */
+
+:root {
+  /* ---- Navy / Ink (signature brand ground) ---- */
+  --navy-950: #060726;   /* deepest — full-bleed hero ground          */
+  --navy-900: #0A0B3B;   /* BRAND NAVY — primary dark surface         */
+  --navy-800: #14163F;   /* raised dark surface / cards on navy       */
+  --navy-700: #20235A;   /* hairlines & borders on navy               */
+  --navy-600: #34387A;   /* muted text on navy                        */
+  --navy-500: #4A4F9E;   /* decorative / disabled on navy             */
+  --navy-300: #9EA1D6;   /* soft tint                                 */
+  --navy-100: #E4E5F4;   /* lightest navy wash (light-surface tint)   */
+
+  /* ---- Red (brand accent) ---- */
+  --red-700:  #A50C22;   /* pressed / deep                            */
+  --red-600:  #B80E27;   /* hover                                     */
+  --red-500:  #D2102C;   /* BRAND RED — primary accent                */
+  --red-400:  #E5435A;   /* lighter accent / on-navy accent text      */
+  --red-200:  #F4B8C1;   /* tint border                               */
+  --red-100:  #FBE5E8;   /* soft red wash (light surface)             */
+  --red-50:   #FDF2F3;   /* faintest wash                             */
+
+  /* ---- Neutrals (cool slate) ---- */
+  --white:    #FFFFFF;
+  --slate-50:  #F7F8FB;  /* page background (light)                   */
+  --slate-100: #EEF0F5;  /* subtle surface / fills                    */
+  --slate-200: #E0E3EC;  /* borders, dividers                         */
+  --slate-300: #C7CCDA;  /* strong border / disabled                  */
+  --slate-400: #98A0B5;  /* placeholder                               */
+  --slate-500: #6B7388;  /* muted body text                           */
+  --slate-600: #5A6175;  /* muted secondary                           */
+  --slate-700: #353B4D;  /* secondary text                            */
+  --slate-900: #1A1E2C;  /* primary body text (off-black, navy-tint)  */
+
+  /* ---- Semantic status ---- */
+  --success-500: #1F9D72;
+  --success-100: #E3F4EE;
+  --warning-500: #C9871A;
+  --warning-100: #FBF0DC;
+  --info-500:    #2563C9;
+  --info-100:    #E4EDFB;
+}
+
+/* ============================================================
+   Semantic aliases — reference THESE in components, not raw scale.
+   ============================================================ */
+:root {
+  /* Surfaces */
+  --surface-page:        var(--slate-50);
+  --surface-card:        var(--white);
+  --surface-sunken:      var(--slate-100);
+  --surface-inverse:     var(--navy-900);   /* dark sections          */
+  --surface-inverse-2:   var(--navy-800);   /* card on dark           */
+
+  /* Text */
+  --text-strong:   var(--navy-900);   /* headlines on light          */
+  --text-body:     var(--slate-900);  /* paragraphs                  */
+  --text-muted:    var(--slate-500);  /* secondary / captions        */
+  --text-faint:    var(--slate-400);  /* placeholders                */
+  --text-on-dark:        var(--white);
+  --text-on-dark-muted:  var(--navy-300);
+  --text-accent:   var(--red-500);
+
+  /* Brand */
+  --brand-navy:    var(--navy-900);
+  --brand-red:     var(--red-500);
+
+  /* Lines */
+  --border-subtle: var(--slate-200);
+  --border-strong: var(--slate-300);
+  --border-on-dark: var(--navy-700);
+
+  /* Interactive accent */
+  --accent:         var(--red-500);
+  --accent-hover:   var(--red-600);
+  --accent-active:  var(--red-700);
+
+  /* Focus */
+  --ring: var(--red-400);
+}
+
+/* ============================================================
+   Novalycs — Typography Scale
+   Display: Space Grotesk · Body/UI: IBM Plex Sans · Labels: IBM Plex Mono
+   Type is tight and confident. Headlines use negative tracking;
+   eyebrows/labels use mono with positive tracking + uppercase.
+   ============================================================ */
+
+:root {
+  /* ---- Font families (re-exported from fonts.css for convenience) ---- */
+
+  /* ---- Weights ---- */
+  --fw-regular: 400;  /* @kind font */
+  --fw-medium: 500;   /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold: 700;     /* @kind font */
+
+  /* ---- Type scale (fluid-ready px values) ---- */
+  --fs-display: 4.5rem;    /* 72px — hero headline                 */
+  --fs-h1: 3.25rem;        /* 52px                                 */
+  --fs-h2: 2.5rem;         /* 40px — section titles                */
+  --fs-h3: 1.75rem;        /* 28px                                 */
+  --fs-h4: 1.3125rem;      /* 21px                                 */
+  --fs-lead: 1.25rem;      /* 20px — intro paragraphs              */
+  --fs-body: 1.0625rem;    /* 17px — default body                  */
+  --fs-sm: 0.9375rem;      /* 15px                                 */
+  --fs-xs: 0.8125rem;      /* 13px — captions                      */
+  --fs-eyebrow: 0.75rem;   /* 12px — mono labels                   */
+
+  /* ---- Line heights ---- */
+  --lh-tight: 1.04;        /* @kind font */
+  --lh-snug: 1.15;         /* @kind font */
+  --lh-normal: 1.55;       /* @kind font */
+  --lh-relaxed: 1.7;       /* @kind font */
+
+  /* ---- Letter spacing ---- */
+  --ls-tighter: -0.03em;   /* @kind font */
+  --ls-tight: -0.015em;    /* @kind font */
+  --ls-normal: 0;          /* @kind font */
+  --ls-wide: 0.04em;       /* @kind font */
+  --ls-eyebrow: 0.18em;    /* @kind font */
+}
+
+/* ============================================================
+   Novalycs — Spacing & Layout
+   8px base rhythm. Generous section padding for an editorial,
+   premium enterprise feel.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing scale (8px base) ---- */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4  */
+  --space-2: 0.5rem;    /* 8  */
+  --space-3: 0.75rem;   /* 12 */
+  --space-4: 1rem;      /* 16 */
+  --space-5: 1.5rem;    /* 24 */
+  --space-6: 2rem;      /* 32 */
+  --space-7: 2.5rem;    /* 40 */
+  --space-8: 3rem;      /* 48 */
+  --space-9: 4rem;      /* 64 */
+  --space-10: 5rem;     /* 80 */
+  --space-12: 7rem;     /* 112 */
+  --space-14: 9rem;     /* 144 */
+
+  /* ---- Layout ---- */
+  --container-max: 1200px;
+  --container-wide: 1320px;
+  --container-pad: 1.5rem;     /* gutter on mobile               */
+  --container-pad-lg: 2.5rem;  /* gutter on desktop              */
+  --section-y: 7rem;           /* vertical section padding       */
+  --section-y-sm: 4.5rem;
+}
+
+/* ============================================================
+   Novalycs — Radii, Borders, Shadows, Motion
+   Crisp & structured. Modest radii (the brand is geometric, not
+   soft). Shadows are cool/navy-tinted and restrained.
+   ============================================================ */
+
+:root {
+  /* ---- Radii (geometric, restrained) ---- */
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 10px;     /* default card / input                 */
+  --radius-lg: 16px;     /* large feature card                   */
+  --radius-xl: 24px;
+  --radius-pill: 999px;  /* eyebrow chips, avatars               */
+
+  /* ---- Border widths ---- */
+  --border-1: 1px;
+  --border-2: 2px;
+  --border-accent: 3px;  /* the "fast-forward" accent edge        */
+
+  /* ---- Shadows (cool navy-tinted, restrained) ---- */
+  --shadow-xs: 0 1px 2px rgba(10, 11, 59, 0.06);
+  --shadow-sm: 0 2px 6px rgba(10, 11, 59, 0.07);
+  --shadow-md: 0 8px 24px rgba(10, 11, 59, 0.09);
+  --shadow-lg: 0 18px 48px rgba(10, 11, 59, 0.13);
+  --shadow-accent: 0 10px 30px rgba(210, 16, 44, 0.22);  /* red glow on CTAs */
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);     /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast: 140ms;  /* @kind other */
+  --dur: 220ms;       /* @kind other */
+  --dur-slow: 420ms;  /* @kind other */
+
+  /* ---- Z ---- */
+  --z-nav: 100;      /* @kind other */
+  --z-overlay: 500;  /* @kind other */
+}
+

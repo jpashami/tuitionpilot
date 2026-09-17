@@ -8,8 +8,9 @@ Built by team **Novalycs** for Agentic Commerce Pioneers Edition II, Track 2 (Pa
 
 | | |
 |---|---|
-| Pitch deck (6 slides) | [docs/deck/TuitionPilot-Novalycs-deck.pdf](docs/deck/TuitionPilot-Novalycs-deck.pdf) · [HTML version](docs/deck/deck.html) |
-| Product requirements | [docs/prd.html](docs/prd.html) (download and open in a browser) |
+| Website | [tuitionpilot.jpashami.workers.dev](https://tuitionpilot.jpashami.workers.dev) |
+| Pitch deck (6 slides) | [online](https://tuitionpilot.jpashami.workers.dev/deck/) · [PDF](docs/deck/TuitionPilot-Novalycs-deck.pdf) |
+| Product requirements | [online](https://tuitionpilot.jpashami.workers.dev/prd/) · [source](docs/prd.html) |
 | Demo video script | [docs/video-script.md](docs/video-script.md) |
 | Presenter | Jafar Pashami · Demo Day 21 Sep 2026, online |
 
@@ -98,6 +99,15 @@ To run the offline tests of the rules and the refusal and duplicate paths:
 npm run test:logic
 ```
 
+## Website
+
+The public landing page is a static site in `site/`, hosted on Cloudflare as a Worker serving static assets (`cloudflare/wrangler.jsonc`). `npm run site:build` copies the deck, its PDF and the PRD from `docs/` into `site/`.
+
+```bash
+npx wrangler@4 login     # once
+npm run site:deploy      # build and publish
+```
+
 ## Pages
 
 - `/demo`: choose a sample or upload an invoice, run the agent, and watch the live timeline and payment proof.
@@ -130,5 +140,6 @@ The TuitionPilot mark (red apex over a navy delta wing) and lockup are in `publi
 - `app/{demo,parent,bursar}`: the UI
 - `app/receipt/[invoiceId]`: printable payment receipt
 - `lib/settlement.ts`: simulated CAD conversion view
+- `site/`, `cloudflare/`: the public landing page and its Cloudflare config
 - `scripts/`: key generation, merchant setup, wallet registration and a mainnet smoke test
 - `tests/logic.test.mts`: offline tests for the rules and pay-once paths

@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test:logic": "tsx --conditions=react-server tests/logic.test.mts"
+    "test:logic": "tsx --conditions=react-server tests/logic.test.mts",
+    "site:build": "node scripts/build-site.mjs",
+    "site:deploy": "npm run site:build && npx wrangler@4 deploy --config cloudflare/wrangler.jsonc"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.126.0",

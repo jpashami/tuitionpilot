@@ -108,11 +108,24 @@ npx wrangler@4 login     # once
 npm run site:deploy      # build and publish
 ```
 
+## Onboarding and compliance
+
+TuitionPilot would be a money services business in Canada, so onboarding follows FINTRAC's client-identification rules and PIPEDA:
+
+- **Who is verified:** the *payer* (the person funding a CAD 1,000+ transfer). Accepted: passport, driver's licence, provincial ID or PR card, or two independent sources (utility bill, bank statement, CRA notice, birth certificate). A study permit is *not* photo ID; it is used only to show the student's eligibility.
+- **Registration** (`/register`): payer details with third-party and PEP declarations, student details, payment rules, document upload, purpose-specific consent. A privacy access code is shown once.
+- **Compliance queue** (Admin page): a reviewer accepts or rejects each document; the payer becomes *verified* by photo ID or by two accepted sources. The agent refuses to pay for a family whose payer isn't verified (rule `payer_verified`).
+- **My data** (`/privacy`): with email + code, a person can see everything held, export it as JSON, withdraw optional consents, or erase. Erasure deletes contact details, document images, invoice files and transcripts immediately; identity-verification and payment records stay 5 years (FINTRAC), minimised and dated for purge.
+
+Not built: automated document-authenticity checks, sanctions/PEP screening, and sign-in for the admin console.
+
 ## Pages
 
 - `/demo`: choose a sample or upload an invoice, run the agent, and watch the live timeline and payment proof.
 - `/parent`: the wallet address and balance, the payment rules (mandate), and receipts.
 - `/bursar`: what the university sees.
+- `/admin`: every family, wallet balances, the compliance queue and the full transaction history.
+- `/register` and `/privacy`: onboarding and PIPEDA self-service (see above).
 - `/receipt/<invoice id>`: the receipt shared by the family and the school.
 
 The sample invoices in `samples/` are:

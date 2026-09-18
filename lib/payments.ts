@@ -4,7 +4,7 @@ import { getDb, getMandate, logEvent, newId, type InvoiceRow, type PaymentRow } 
 import { checkMandate } from './mandate';
 import { GoBtcError } from './gobtc/client';
 import { createPayment, getPayment } from './gobtc/merchant';
-import { buildPsbt, getBalance, inspectPayment, signPsbt, submitSignedPsbt } from './gobtc/instant';
+import { buildPsbt, getSpendableBalance, inspectPayment, signPsbt, submitSignedPsbt } from './gobtc/instant';
 
 /** Real mainnet submission only when explicitly enabled. Otherwise stop after building the PSBT. */
 export function paymentsEnabled() {
@@ -150,7 +150,8 @@ export async function payInvoice(invoiceId: string, runId?: string): Promise<Pay
     if (view.amountSats < DUST_FLOOR_SATS) throw new Error(`Amount ${view.amountSats} sats is below the ~${DUST_FLOOR_SATS}-sat floor.`);
 
     // 3. Balance, then build.
-    const balance = await getBalance();
+    const balance = await getSpendableBalance();
+    if (balance.note) logEvent({ runId, invoiceId, kind: 'payment', title: 'Balance read from the blockchain', detail: balance.note });
     if (balance.leftSats < view.amountSats + 250) {
       throw new Error(`Agent wallet needs funds: ${balance.leftSats} sats spendable, this demo payment needs about ${view.amountSats + 250} sats (${view.amountSats} + fee). Nothing was signed or sent.`);
     }
@@ -159,7 +160,7 @@ export async function payInvoice(invoiceId: string, runId?: string): Promise<Pay
     setPayment(row.id, { job_id: built.jobId, fee_sats: built.summary.feeSats });
     logEvent({
       runId, invoiceId, kind: 'payment', title: 'Transaction built (2-of-3, not yet signed)',
-      detail: { amountSats: built.summary.amountSats, feeSats: built.summary.feeSats, feeRate: built.summary.feeRateSatVb, balanceSats: balance.leftSats },
+      detail: { amountSats: built.summary.amountSats, feeSats: built.summary.feeSats, feeRate: built.summary.feeRateSatVb, balanceSats: balance.leftSats, balanceSource: balance.source },
     });
 
     if (!paymentsEnabled()) {

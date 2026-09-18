@@ -85,6 +85,8 @@ function parse(detail: string | null): any {
 
 export default function AgentConsole() {
   const [samples, setSamples] = useState<Sample[]>([]);
+  const [families, setFamilies] = useState<{ id: string; name: string; parent_name: string; payer_status: string | null }[]>([]);
+  const [familyId, setFamilyId] = useState('stu_demo');
   const [invoices, setInvoices] = useState<Invoice[]>([]);
   const [cap, setCap] = useState<{ amount: number; currency: string } | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
@@ -104,9 +106,19 @@ export default function AgentConsole() {
 
   useEffect(() => {
     fetch('/api/samples').then((r) => r.json()).then((j) => setSamples(j.samples ?? []));
-    fetch('/api/mandate').then((r) => r.json()).then((j) => setCap({ amount: j.mandate.max_per_term, currency: j.mandate.currency }));
-    loadInvoices().then((list) => setSelected((cur) => cur ?? list[0]?.id ?? null));
+    fetch('/api/students').then((r) => r.json()).then((j) => setFamilies(j.students ?? []));
+    // ?invoice=<id> (from the admin page) opens that invoice; otherwise the newest one.
+    const wanted = new URLSearchParams(window.location.search).get('invoice');
+    loadInvoices().then((list) =>
+      setSelected((cur) => cur ?? (wanted && list.some((i) => i.id === wanted) ? wanted : list[0]?.id ?? null)),
+    );
   }, [loadInvoices]);
+
+  useEffect(() => {
+    fetch(`/api/mandate?student=${familyId}`)
+      .then((r) => r.json())
+      .then((j) => j.mandate && setCap({ amount: j.mandate.max_per_term, currency: j.mandate.currency }));
+  }, [familyId]);
 
   const polling = useRef(false);
   const selectedRef = useRef<string | null>(null);
@@ -150,7 +162,7 @@ export default function AgentConsole() {
     const r = await fetch('/api/invoices', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ sample: name }),
+      body: JSON.stringify({ sample: name, studentId: familyId }),
     });
     const j = await r.json();
     if (!r.ok) return setError(j.error);
@@ -162,6 +174,7 @@ export default function AgentConsole() {
     setError(null);
     const fd = new FormData();
     fd.append('file', file);
+    fd.append('studentId', familyId);
     const r = await fetch('/api/invoices', { method: 'POST', body: fd });
     const j = await r.json();
     if (!r.ok) return setError(j.error);
@@ -232,7 +245,19 @@ export default function AgentConsole() {
       {/* ------- left column ------- */}
       <div className="flex-[1_1_300px] max-w-[340px] min-w-0 flex flex-col gap-[18px]">
         <Card accent eyebrow="Intake" title="New invoice">
-          <p className="text-[13px] tp-muted -mt-2 mb-4">Run a sample, or upload a PDF, photo or text invoice.</p>
+          <p className="text-[13px] tp-muted -mt-2 mb-3">Run a sample, or upload a PDF, photo or text invoice.</p>
+          <div className="tp-field mb-4">
+            <label htmlFor="family">Family</label>
+            <select id="family" className="tp-input !py-2 !text-sm" value={familyId} onChange={(e) => setFamilyId(e.target.value)}>
+              {families.map((f) => (
+                <option key={f.id} value={f.id}>
+                  {f.parent_name} · for {f.name}
+                  {f.payer_status === 'verified' ? '' : ` (identity ${f.payer_status ?? 'missing'})`}
+                </option>
+              ))}
+            </select>
+            <a href="/register" className="tp-hint">+ Register a new family</a>
+          </div>
           <div className="flex flex-col gap-2">
             {samples.map((s) => {
               const h = SAMPLE_HINTS[s.name];

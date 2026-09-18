@@ -8,6 +8,7 @@ const TABS = [
   { href: '/demo', label: 'Agent', section: 'Agent console' },
   { href: '/parent', label: 'Parent', section: 'Parent view' },
   { href: '/bursar', label: 'Bursar', section: 'Bursar view' },
+  { href: '/admin', label: 'Admin', section: 'Admin' },
 ];
 
 export default function Header({ live, children }: { live: boolean; children?: React.ReactNode }) {
@@ -30,6 +31,9 @@ export default function Header({ live, children }: { live: boolean; children?: R
               </Link>
             ))}
           </nav>
+          <Link href="/register" className="tp-tab" style={{ color: 'var(--navy-300)' }}>
+            + Family
+          </Link>
           <div className={`tp-mode ${live ? 'live' : ''}`} title={live ? 'Payments are signed and sent on Bitcoin mainnet' : 'The agent stops right before signing'}>
             <b aria-hidden="true" />
             {live ? 'Live signing' : 'Dry run'}

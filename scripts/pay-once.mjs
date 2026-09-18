@@ -8,7 +8,7 @@ import * as bitcoin from "bitcoinjs-lib";
 import { createInterface } from "node:readline/promises";
 import { gobtc, requireEnv } from "./lib/env.mjs";
 
-const env = requireEnv("GOBTC_SK_LIVE", "GOBTC_MERCHANT_ID", "GOBTC_PAYER_PRIVKEY_HEX", "GOBTC_PAYER_PUBKEY_HEX");
+const env = requireEnv("GOBTC_SK_LIVE", "GOBTC_MERCHANT_ID", "GOBTC_PAYER_PRIVKEY_HEX", "GOBTC_PAYER_PUBKEY_HEX", "GOBTC_PAYER_ADDRESS");
 const amount = Number(process.argv[2] ?? "1.00");
 const externalId = process.argv[3] ?? `smoke-${Date.now()}`;
 const key = hexToBytes(env.GOBTC_PAYER_PRIVKEY_HEX);
@@ -23,8 +23,17 @@ const { accessToken } = await gobtc("/instant/auth/get-jwt", {
   challengeId: ch.challengeId,
   signature: bytesToHex(secp256k1.sign(hashMsg(ch.messageToSign), key, { prehash: false })),
 });
-const bal = await gobtc("/instant/wallet/get-balances", {}, accessToken);
-console.log(`Agent spendable balance: ${bal.leftBalance} sats`);
+try {
+  const bal = await gobtc("/instant/wallet/get-balances", {}, accessToken);
+  console.log(`Agent spendable balance (GoBTC): ${bal.leftBalance} sats`);
+} catch (e) {
+  // GoBTC's balance endpoint was down during the hackathon; show what the blockchain says instead.
+  const r = await fetch(`https://mempool.space/api/address/${env.GOBTC_PAYER_ADDRESS}`).then((x) => x.json());
+  const confirmed = r.chain_stats.funded_txo_sum - r.chain_stats.spent_txo_sum;
+  const pending = r.mempool_stats.funded_txo_sum - r.mempool_stats.spent_txo_sum;
+  console.log(`GoBTC balance unavailable (${e.message}).`);
+  console.log(`On-chain: ${confirmed} sats confirmed, ${pending} sats pending.`);
+}
 
 // --- merchant issues payment (idempotent on externalId) ---
 const payment = await gobtc("/merchant/payment/create", { amount, currency: "CAD", externalId }, env.GOBTC_SK_LIVE);

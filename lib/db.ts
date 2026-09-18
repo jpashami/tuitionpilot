@@ -92,19 +92,82 @@ function initDatabase(database: Database.Database) {
       created_at TEXT NOT NULL DEFAULT (datetime('now'))
     );
     CREATE INDEX IF NOT EXISTS idx_events_invoice ON events(invoice_id, id);
+
+    -- Onboarding & compliance (FINTRAC client identification, PIPEDA consent/access/deletion)
+    CREATE TABLE IF NOT EXISTS persons (
+      id TEXT PRIMARY KEY,
+      student_id TEXT NOT NULL REFERENCES students(id),
+      role TEXT NOT NULL,                -- payer | student
+      full_name TEXT NOT NULL,
+      date_of_birth TEXT,
+      email TEXT,
+      phone TEXT,
+      address_line TEXT,
+      city TEXT,
+      region TEXT,
+      postal_code TEXT,
+      country TEXT,
+      occupation TEXT,
+      third_party TEXT,                  -- payer only: 'no' | description of the third party
+      pep_declared INTEGER NOT NULL DEFAULT 0,
+      verification_status TEXT NOT NULL DEFAULT 'pending', -- pending | verified | rejected
+      verification_method TEXT,          -- photo_id | dual_process | credit_file
+      verified_at TEXT,
+      verified_by TEXT,
+      privacy_code_hash TEXT,            -- lets the person open /privacy without an account
+      created_at TEXT NOT NULL DEFAULT (datetime('now')),
+      erased_at TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS identity_documents (
+      id TEXT PRIMARY KEY,
+      person_id TEXT NOT NULL REFERENCES persons(id),
+      purpose TEXT NOT NULL,             -- fintrac_photo_id | fintrac_source | eligibility
+      doc_type TEXT NOT NULL,            -- passport | drivers_licence | provincial_id | pr_card | utility_bill | bank_statement | cra_notice | study_permit | enrolment_letter
+      issuer TEXT,
+      number_last4 TEXT,
+      expires_on TEXT,
+      file_path TEXT,                    -- NULL once the image is purged
+      media_type TEXT,
+      review_status TEXT NOT NULL DEFAULT 'pending', -- pending | accepted | rejected
+      review_note TEXT,
+      uploaded_at TEXT NOT NULL DEFAULT (datetime('now')),
+      retain_until TEXT                  -- FINTRAC: 5 years after the relationship ends
+    );
+
+    CREATE TABLE IF NOT EXISTS consents (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      person_id TEXT NOT NULL REFERENCES persons(id),
+      purpose TEXT NOT NULL,             -- identity_verification | payment_processing | receipts_to_student | product_updates
+      version TEXT NOT NULL,
+      granted_at TEXT NOT NULL DEFAULT (datetime('now')),
+      withdrawn_at TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS privacy_requests (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      person_id TEXT NOT NULL,
+      kind TEXT NOT NULL,                -- access | export | erase | withdraw_consent
+      requested_at TEXT NOT NULL DEFAULT (datetime('now')),
+      completed_at TEXT,
+      note TEXT
+    );
   `);
   // Columns added after the first release of the schema.
   const cols = (database.prepare('PRAGMA table_info(payments)').all() as { name: string }[]).map((c) => c.name);
   if (!cols.includes('rate_at_request')) database.exec('ALTER TABLE payments ADD COLUMN rate_at_request REAL');
   if (!cols.includes('request_expires_at')) database.exec('ALTER TABLE payments ADD COLUMN request_expires_at INTEGER');
+  const scols = (database.prepare('PRAGMA table_info(students)').all() as { name: string }[]).map((c) => c.name);
+  if (!scols.includes('status')) database.exec("ALTER TABLE students ADD COLUMN status TEXT NOT NULL DEFAULT 'active'");
+  if (!scols.includes('created_at')) database.exec("ALTER TABLE students ADD COLUMN created_at TEXT NOT NULL DEFAULT ''");
   seed(database);
 }
 
 // One demo family. The approved payee is our own GoBTC merchant account, acting as the bursar.
 function seed(database: Database.Database) {
   const exists = database.prepare('SELECT 1 FROM students WHERE id = ?').get('stu_demo');
-  if (exists) return;
-  database
+  if (!exists) {
+    database
     .prepare(
       `INSERT INTO students (id, name, university, student_number, parent_name, country_from)
        VALUES ('stu_demo', 'Leila Ahmadi', 'Northshore University (demo)', 'NSU-2026-48213', 'Reza Ahmadi', 'Abroad')`,
@@ -116,6 +179,15 @@ function seed(database: Database.Database) {
        VALUES ('man_demo', 'stu_demo', ?, 'Northshore University Bursar', 'CAD', 9000, 21)`,
     )
     .run(process.env.GOBTC_MERCHANT_ID ?? 'unset');
+  }
+  // The demo family's payer counts as verified so the sample invoices can run; real families go through /register.
+  database
+    .prepare(
+      `INSERT OR IGNORE INTO persons (id, student_id, role, full_name, country, third_party, verification_status, verification_method, verified_at, verified_by)
+       VALUES ('per_demo_payer', 'stu_demo', 'payer', 'Reza Ahmadi', 'Abroad', 'no', 'verified', 'photo_id', datetime('now'), 'demo seed'),
+              ('per_demo_student', 'stu_demo', 'student', 'Leila Ahmadi', 'CA', NULL, 'verified', 'photo_id', datetime('now'), 'demo seed')`,
+    )
+    .run();
 }
 
 export function logEvent(e: {
@@ -147,6 +219,7 @@ export interface StudentRow {
   student_number: string;
   parent_name: string;
   country_from: string;
+  status: string;
 }
 
 export interface MandateRow {

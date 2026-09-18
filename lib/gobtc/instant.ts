@@ -4,6 +4,7 @@ import { sha256 } from '@noble/hashes/sha2.js';
 import { bytesToHex, concatBytes, hexToBytes, utf8ToBytes } from '@noble/hashes/utils.js';
 import * as bitcoin from 'bitcoinjs-lib';
 import { gobtcPost, GoBtcError, requireEnv, sats } from './client';
+import { onchainBalance } from './onchain';
 
 // ---------- auth (challenge-response, 10-minute JWT) ----------
 
@@ -92,6 +93,25 @@ export async function getBalance(): Promise<WalletBalance> {
     lockedSats: sats(raw.lockedBalance),
     raw,
   };
+}
+
+/**
+ * Spendable sats for the agent wallet. Prefers GoBTC's own figure; if that endpoint is down
+ * (it returned "Internal error" during the hackathon), falls back to confirmed on-chain funds.
+ */
+export async function getSpendableBalance(): Promise<{ leftSats: number; lockedSats: number; source: 'gobtc' | 'onchain'; note?: string }> {
+  try {
+    const b = await getBalance();
+    return { leftSats: b.leftSats, lockedSats: b.lockedSats, source: 'gobtc' };
+  } catch (e) {
+    const chain = await onchainBalance(walletAddress());
+    return {
+      leftSats: chain.confirmedSats,
+      lockedSats: 0,
+      source: 'onchain',
+      note: `GoBTC balance unavailable (${(e as Error).message}); using confirmed on-chain funds${chain.pendingSats ? `, ${chain.pendingSats} sats still pending` : ''}.`,
+    };
+  }
 }
 
 export function walletAddress(): string {

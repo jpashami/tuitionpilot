@@ -50,22 +50,28 @@ export default function ParentPage() {
   const [invoices, setInvoices] = useState<InvoiceSummary[]>([]);
   const [saved, setSaved] = useState<{ ok: boolean; text: string } | null>(null);
 
+  const [studentId] = useState(() =>
+    typeof window === 'undefined' ? 'stu_demo' : new URLSearchParams(window.location.search).get('student') || 'stu_demo',
+  );
+
   useEffect(() => {
     fetch('/api/wallet').then((r) => r.json()).then(setWallet);
-    fetch('/api/invoices').then((r) => r.json()).then((j) => setInvoices(j.invoices ?? []));
-    fetch('/api/mandate')
+    fetch('/api/invoices')
+      .then((r) => r.json())
+      .then((j) => setInvoices((j.invoices ?? []).filter((i: { student_id?: string }) => !i.student_id || i.student_id === studentId)));
+    fetch(`/api/mandate?student=${studentId}`)
       .then((r) => r.json())
       .then((j) => {
         setStudent(j.student);
         setMandate(j.mandate);
         setForm({ max_per_term: String(j.mandate.max_per_term), pay_window_days: String(j.mandate.pay_window_days), autopay: j.mandate.autopay === 1 });
       });
-  }, []);
+  }, [studentId]);
 
   async function save(e: React.FormEvent) {
     e.preventDefault();
     setSaved(null);
-    const r = await fetch('/api/mandate', {
+    const r = await fetch(`/api/mandate?student=${studentId}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form),

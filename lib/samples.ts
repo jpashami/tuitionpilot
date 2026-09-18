@@ -31,11 +31,13 @@ export function createInvoice(opts: { name: string; mediaType: string; data: Buf
   return id;
 }
 
-export function createInvoiceFromSample(sample: string) {
+export function createInvoiceFromSample(sample: string, studentId?: string) {
   if (!listSamples().some((s) => s.name === sample)) throw new Error('Unknown sample');
-  const text = readFileSync(join(SAMPLES_DIR, sample), 'utf8').replaceAll(
-    '{{MERCHANT_ID}}',
-    process.env.GOBTC_MERCHANT_ID ?? 'MERCHANT-NOT-CONFIGURED',
-  );
-  return createInvoice({ name: sample, mediaType: 'text/plain', data: Buffer.from(text, 'utf8') });
+  const family = studentId
+    ? (getDb().prepare('SELECT name, student_number FROM students WHERE id = ?').get(studentId) as { name: string; student_number: string } | undefined)
+    : undefined;
+  let text = readFileSync(join(SAMPLES_DIR, sample), 'utf8').replaceAll('{{MERCHANT_ID}}', process.env.GOBTC_MERCHANT_ID ?? 'MERCHANT-NOT-CONFIGURED');
+  // Samples are written for the demo student; re-address them to the selected family.
+  if (family) text = text.replaceAll('NSU-2026-48213', family.student_number).replaceAll('Leila Ahmadi', family.name);
+  return createInvoice({ name: sample, mediaType: 'text/plain', data: Buffer.from(text, 'utf8'), studentId });
 }

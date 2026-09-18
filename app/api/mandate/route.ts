@@ -3,8 +3,13 @@ import { getDb, getMandate, type StudentRow } from '@/lib/db';
 
 export const runtime = 'nodejs';
 
-export async function GET() {
-  const student = getDb().prepare("SELECT * FROM students WHERE id = 'stu_demo'").get() as StudentRow;
+function studentIdFrom(req: NextRequest) {
+  return req.nextUrl.searchParams.get('student') || 'stu_demo';
+}
+
+export async function GET(req: NextRequest) {
+  const student = getDb().prepare('SELECT * FROM students WHERE id = ?').get(studentIdFrom(req)) as StudentRow | undefined;
+  if (!student) return NextResponse.json({ error: 'Unknown family' }, { status: 404 });
   return NextResponse.json({ student, mandate: getMandate(student.id) });
 }
 
@@ -18,8 +23,8 @@ export async function PUT(req: NextRequest) {
   }
   getDb()
     .prepare(
-      "UPDATE mandates SET max_per_term = ?, pay_window_days = ?, autopay = ?, updated_at = datetime('now') WHERE student_id = 'stu_demo'",
+      "UPDATE mandates SET max_per_term = ?, pay_window_days = ?, autopay = ?, updated_at = datetime('now') WHERE student_id = ?",
     )
-    .run(max, Math.round(days), body.autopay ? 1 : 0);
-  return NextResponse.json({ mandate: getMandate('stu_demo') });
+    .run(max, Math.round(days), body.autopay ? 1 : 0, studentIdFrom(req));
+  return NextResponse.json({ mandate: getMandate(studentIdFrom(req)) });
 }

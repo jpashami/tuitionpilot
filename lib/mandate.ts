@@ -22,6 +22,20 @@ export function checkMandate(invoice: InvoiceRow, mandate: MandateRow | undefine
   }
   add('mandate_exists', true, `Mandate ${mandate.id} is active.`);
 
+  // FINTRAC: the person requesting a virtual-currency transfer of CAD 1,000+ must be identified first.
+  const payer = getDb()
+    .prepare("SELECT verification_status, verification_method FROM persons WHERE student_id = ? AND role = 'payer' AND erased_at IS NULL")
+    .get(invoice.student_id) as { verification_status: string; verification_method: string | null } | undefined;
+  add(
+    'payer_verified',
+    payer?.verification_status === 'verified',
+    payer?.verification_status === 'verified'
+      ? `Payer identity verified (${payer.verification_method?.replace('_', ' ') ?? 'FINTRAC method'}).`
+      : payer
+        ? `Payer identity is ${payer.verification_status} — compliance review not complete.`
+        : 'No verified payer on file for this family.',
+  );
+
   const fieldsPresent =
     invoice.amount != null && !!invoice.currency && !!invoice.due_date && !!invoice.term && !!invoice.payee_merchant_id;
   add('invoice_complete', fieldsPresent, fieldsPresent ? 'All required invoice fields extracted.' : 'Invoice is missing amount, currency, term, due date or payee ID.');

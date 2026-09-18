@@ -17,6 +17,7 @@ export interface RuleRow {
 const RULES: [string, string][] = [
   ['invoice_complete', 'Invoice read'],
   ['mandate_exists', 'Mandate active'],
+  ['payer_verified', 'Payer identity (FINTRAC)'],
   ['approved_payee', 'Approved payee'],
   ['student_match', 'Student match'],
   ['currency', 'Currency'],
@@ -114,6 +115,14 @@ export function verdictFor(opts: {
       tone: 'refused', status: 'Refused · duplicate', headline: 'Refused — this invoice was already handled.',
       saw: failed.find((c) => c.rule === 'not_duplicate')?.detail ?? decision ?? '', rule: 'Each invoice gets one order key. A second copy can never create a second payment.',
       next: 'Nothing was paid. Check the original invoice for its status and receipt.',
+    };
+  }
+  if (s === 'refused' && failedRule('payer_verified')) {
+    return {
+      tone: 'refused', status: 'Refused · identity', headline: 'Refused — the payer’s identity isn’t verified yet.',
+      saw: failed.find((c) => c.rule === 'payer_verified')!.detail,
+      rule: 'FINTRAC requires the person funding a CAD 1,000+ virtual-currency transfer to be identified before it happens.',
+      next: 'Nothing was signed. Complete the compliance review on the Admin page, then run the agent again.',
     };
   }
   if (s === 'refused' && failedRule('approved_payee')) {

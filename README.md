@@ -12,6 +12,7 @@ Built by team **Novalycs** for Agentic Commerce Pioneers Edition II, Track 2 (Pa
 | Pitch deck (12 slides) | [online](https://tuitionpilot.jpashami.workers.dev/deck/) · [PDF](docs/deck/TuitionPilot-Novalycs-deck.pdf) |
 | Product requirements | [online](https://tuitionpilot.jpashami.workers.dev/prd/) · [source](docs/prd.html) |
 | Demo video script | [docs/video-script.md](docs/video-script.md) |
+| Video production (AI voice) | [docs/video-production.md](docs/video-production.md) |
 | Pitch speaker notes (5 min) | [docs/speaker-notes.md](docs/speaker-notes.md) |
 | Presenter | Jafar Pashami · Demo Day 21 Sep 2026, online |
 

@@ -13,6 +13,7 @@
   --mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
 }
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 html { color-scheme: light; }
 body { margin: 0; background: #2A2C44; font-family: var(--sans); color: var(--slate-900); padding-inline: 16px; padding-block: 24px; }
 .deck { display: flex; flex-direction: column; align-items: center; gap: 24px; }
@@ -159,6 +160,37 @@ tr.us td { color: var(--red-600); font-weight: 600; }
 .ask h3 { font-family: var(--display); font-size: 29px; letter-spacing: -0.02em; margin: 10px 0 8px; color: var(--navy-900); line-height: 1.15; }
 .ask p { font-size: 19px; line-height: 1.45; color: var(--slate-500); margin: 0; }
 
+
+/* illustrations */
+.illus { margin-top: 30px; }
+.ico { flex: none; }
+
+/* slide 2 — compact ICP bar */
+.icpbar { display: flex; align-items: center; gap: 26px; background: var(--navy-900); border-radius: 14px; padding: 18px 28px; margin-top: 30px; }
+.icpbar .k { font-family: var(--mono); font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--red-400); white-space: nowrap; }
+.icpbar .who { font-family: var(--display); font-weight: 700; font-size: 26px; letter-spacing: -0.02em; color: #fff; white-space: nowrap; }
+.icpbar p { margin: 0; font-size: 19px; line-height: 1.35; color: var(--navy-300); }
+
+/* slide 4 — pipeline */
+.pipe { margin-top: auto; margin-bottom: auto; }
+.pipelabels { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; margin-top: 14px; }
+.pipelabels div { text-align: center; }
+.pipelabels .w { font-family: var(--mono); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--slate-400); }
+.pipelabels .t { font-family: var(--display); font-size: 23px; font-weight: 600; letter-spacing: -0.02em; color: var(--navy-900); margin-top: 8px; line-height: 1.15; }
+.pipelabels .u .t { color: var(--red-600); }
+
+/* sponsors */
+.sponsors { display: flex; align-items: center; justify-content: center; gap: 110px; flex-wrap: wrap; margin: auto 0; }
+.sp { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.sp .role { font-family: var(--mono); font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--navy-500); }
+.sp img { max-height: 92px; max-width: 320px; display: block; }
+.sp .wm { font-family: var(--display); font-weight: 700; font-size: 54px; letter-spacing: -0.03em; color: #fff; }
+.sp .wm i { font-style: normal; color: var(--red-400); }
+.thanks { margin-top: 0; margin-bottom: 56px; display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; }
+.thanks .big { font-family: var(--display); font-weight: 700; font-size: 62px; letter-spacing: -0.035em; color: #fff; line-height: 1.02; }
+.thanks .links { font-family: var(--mono); font-size: 17px; line-height: 1.9; color: var(--navy-300); text-align: right; white-space: nowrap; }
+.thanks .links b { color: #fff; font-weight: 500; }
+
 @media print {
   @page { size: 1600px 900px; margin: 0; }
   body { background: none; padding: 0; }
@@ -179,7 +211,7 @@ tr.us td { color: var(--red-600); font-weight: 600; }
       <div><b>TuitionPilot</b><span>A NOVALYCS PRODUCT</span></div>
     </div>
     <h1>Tuition that pays itself.</h1>
-    <p class="lead" style="font-size:30px;max-width:980px;margin-top:28px">An AI agent that pays international tuition on time, only to the right school, never twice — for families whose bank can’t reliably get the money there.</p>
+    <p class="lead" style="font-size:30px;max-width:980px;margin-top:28px">An AI agent that pays international tuition on time, only to the right school, never twice.</p>
     <div class="meta">
       <div>Team<b>Novalycs</b></div>
       <div>Track<b>2 · Pay with Bitcoin (GoBTC Pay)</b></div>
@@ -187,109 +219,151 @@ tr.us td { color: var(--red-600); font-weight: 600; }
     </div>
   </div></section>
 
-  <!-- 2 · Problem: who hurts, and what it costs them -->
+  <!-- 2 · Problem -->
   <section class="frame"><div class="slide">
     <div class="eyebrow">// The problem</div>
-    <h2>A parent in Lagos can’t get the money out — and the deadline doesn’t move.</h2>
-    <div class="grid" style="grid-template-columns:1.15fr 1fr 1fr 1fr;margin-top:38px;flex:1;min-height:0;margin-bottom:56px">
-      <div class="icp">
-        <div class="k">Ideal customer profile</div>
-        <h3>Reza, 48 · Lagos</h3>
-        <dl>
-          <dt>Who</dt><dd><b>Parent funding a student abroad.</b> University-educated, middle income, pays CAD 8–12K a term.</dd>
-          <dt>Where</dt><dd>Nigeria — Canada’s <b>3rd-largest</b> source country.</dd>
-          <dt>Holds</dt><dd>Naira and <b>USDT</b>, not spare Canadian dollars.</dd>
-          <dt>Job</dt><dd>Get this term’s tuition to the bursar before the due date, without being scammed.</dd>
-        </dl>
-        <div class="src" style="color:var(--navy-500)">IRCC study-permit data · Chainalysis 2025</div>
+    <h2>The money can’t leave. The deadline doesn’t move.</h2>
+
+    <div class="icpbar">
+      <span class="k">Who</span>
+      <span class="who">Reza, 48 · Lagos</span>
+      <p>Parent, pays CAD 8–12K a term. Holds naira and USDT — not Canadian dollars.</p>
+    </div>
+
+    <div class="illus">
+      <svg viewBox="0 0 1424 210" style="width:100%" role="img" aria-label="The family's money is blocked at their bank before it reaches the Canadian university">
+        <!-- family -->
+        <circle cx="90" cy="78" r="44" fill="#0A0B3B"/>
+        <circle cx="90" cy="66" r="13" fill="#fff"/>
+        <path d="M68 96c0-12 10-20 22-20s22 8 22 20z" fill="#fff"/>
+        <text x="90" y="152" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="22" fill="#0A0B3B">Family in Lagos</text>
+        <text x="90" y="180" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="18" fill="#6B7388">has the money</text>
+        <!-- arrow 1 -->
+        <path d="M150 78 H330" stroke="#98A0B5" stroke-width="3"/>
+        <path d="M330 78 l-14 -8 v16 z" fill="#98A0B5"/>
+        <!-- bank -->
+        <circle cx="404" cy="78" r="44" fill="#fff" stroke="#E0E3EC" stroke-width="2"/>
+        <path d="M380 92h48M384 92V70m12 22V70m12 22V70m12 22V70M404 56l26 14h-52z" stroke="#0A0B3B" stroke-width="3" fill="none" stroke-linejoin="round"/>
+        <text x="404" y="152" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="22" fill="#0A0B3B">Their bank</text>
+        <text x="404" y="180" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="18" fill="#6B7388">rations or refuses FX</text>
+        <!-- blocked arrow -->
+        <path d="M464 78 H1010" stroke="#D2102C" stroke-width="3" stroke-dasharray="12 10" opacity=".55"/>
+        <circle cx="737" cy="78" r="36" fill="#FBE5E8" stroke="#D2102C" stroke-width="3"/>
+        <path d="M723 64 l28 28 M751 64 l-28 28" stroke="#D2102C" stroke-width="5" stroke-linecap="round"/>
+        <text x="737" y="152" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="22" fill="#B80E27">Blocked, or 1–5 days</text>
+        <text x="737" y="180" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="18" fill="#6B7388">and a 2–4% hidden margin</text>
+        <!-- university -->
+        <circle cx="1084" cy="78" r="44" fill="#fff" stroke="#E0E3EC" stroke-width="2"/>
+        <path d="M1054 72l30-16 30 16-30 16z" fill="none" stroke="#98A0B5" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M1066 80v18c0 6 8 10 18 10s18-4 18-10V80" fill="none" stroke="#98A0B5" stroke-width="3"/>
+        <text x="1084" y="152" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="600" font-size="22" fill="#6B7388">Canadian bursar</text>
+        <text x="1084" y="180" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="18" fill="#6B7388">still waiting</text>
+        <!-- consequence -->
+        <path d="M1158 78 H1240" stroke="#E0E3EC" stroke-width="3"/>
+        <rect x="1250" y="42" width="164" height="72" rx="12" fill="#0A0B3B"/>
+        <text x="1332" y="72" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="21" fill="#fff">Late fee</text>
+        <text x="1332" y="98" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="21" fill="#E5435A">Course hold</text>
+      </svg>
+    </div>
+
+    <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:auto;margin-bottom:64px">
+      <div class="card top" style="padding:22px 26px">
+        <h3 style="font-size:25px">Access</h3>
+        <p style="font-size:19px">Nigeria’s central bank stopped supplying FX for study abroad.</p>
       </div>
-      <div class="card top">
-        <div class="stat">1–5 days</div>
-        <h3>The money can’t leave</h3>
-        <p>Banks ration or refuse foreign exchange for study abroad. Where wires work, they are slow and hide a 2–4% margin.</p>
-        <div class="imp"><b>So what</b>The payment may simply never go.</div>
-        <div class="src">ICEF Monitor · Flywire/Convera</div>
+      <div class="card top" style="padding:22px 26px">
+        <h3 style="font-size:25px">Deadlines</h3>
+        <p style="font-size:19px">Miss the date: late fee, registration hold, study-permit stress.</p>
       </div>
-      <div class="card top">
-        <div class="stat">Late</div>
-        <h3>Deadlines are unforgiving</h3>
-        <p>A missed due date brings late fees and a registration hold — and study-permit stress for the student.</p>
-        <div class="imp"><b>So what</b>Dropped courses, a term lost, status at risk.</div>
-        <div class="src">University payment policies</div>
-      </div>
-      <div class="card top">
-        <div class="stat">CAD 125K+</div>
-        <h3>Fraud targets families</h3>
-        <p>Lost by 23 students in one Canadian tuition scam; one CBC case cost a student CAD 37K. A parent abroad can’t tell a real invoice from a fake.</p>
-        <div class="imp"><b>So what</b>A term’s tuition, gone, unrecoverable.</div>
-        <div class="src">University of Regina · CBC Go Public</div>
+      <div class="card top" style="padding:22px 26px">
+        <h3 style="font-size:25px">Fraud</h3>
+        <p style="font-size:19px">CAD 125K taken from 23 students in one Canadian tuition scam.</p>
       </div>
     </div>
     <div class="brand"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
-    <div class="num">02 / 11</div>
+    <div class="num">02 / 12</div>
   </div></section>
 
   <!-- 3 · Value proposition statement -->
   <section class="frame"><div class="slide dark">
     <div class="eyebrow">// Value proposition</div>
     <p class="vp">
-      For <b>families paying Canadian tuition from a country where the bank won’t reliably send the money</b>,
-      <b>Novalycs</b> has developed <b>TuitionPilot</b> — an AI agent that pays from the family’s own wallet — that results in
-      <span class="hl">money that leaves when a wire can’t</span>, <span class="hl">tuition paid before the due date</span> &amp;
+      For <b>families whose bank can’t reliably send tuition abroad</b>,
+      <b>Novalycs</b> has developed <b>TuitionPilot</b> that results in
+      <span class="hl">money that leaves when a wire can’t</span>,
+      <span class="hl">tuition paid before the due date</span> &amp;
       <span class="hl">the whole payment handled end to end</span>.
     </p>
     <div class="vpmap">
       <div>
-        <div class="b">Money that leaves when a wire can’t</div>
-        <div class="p"><em>answers</em>Banks ration or refuse the foreign exchange. The alternative isn’t a cheaper wire — it’s no wire at all.</div>
+        <div class="b">Leaves when a wire can’t</div>
+        <div class="p">The alternative isn’t a cheaper wire. It’s no wire.</div>
       </div>
       <div>
-        <div class="b">Tuition paid before the due date</div>
-        <div class="p"><em>answers</em>Paid in seconds, not 1–5 days. No late fee, no registration hold, no study-permit stress.</div>
+        <div class="b">Paid before the due date</div>
+        <div class="p">Seconds, not days. No late fee, no hold.</div>
       </div>
       <div>
-        <div class="b">The whole payment handled end to end</div>
-        <div class="p"><em>answers</em>Set the rules once. The agent reads, checks, pays and proves — and refuses anything that doesn’t match.</div>
+        <div class="b">Handled end to end</div>
+        <div class="p">Set the rules once. It refuses anything that doesn’t match.</div>
       </div>
     </div>
     <div class="brand"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#FFFFFF"/></svg>TuitionPilot</div>
-    <div class="num">03 / 11</div>
+    <div class="num">03 / 12</div>
   </div></section>
 
-  <!-- 4 · Solution: how it works -->
+  <!-- 4 · Solution -->
   <section class="frame"><div class="slide">
     <div class="eyebrow">// The solution</div>
     <h2>The family sets the rules once. The agent does the rest.</h2>
-    <div class="flow">
-      <div class="step">
-        <div class="who">Parent</div>
-        <h3>Funds the family wallet, sets rules</h3>
-        <p>Approved school, cap per term, payment window, autopay.</p>
-      </div>
-      <div class="step">
-        <div class="who">Student</div>
-        <h3>Uploads the fee invoice</h3>
-        <p>PDF, photo or text.</p>
-      </div>
-      <div class="step us">
-        <div class="who">TuitionPilot agent</div>
-        <h3>Reads, checks, signs</h3>
-        <p>Claude reads the invoice. 8 rules run in code. It verifies the payment request, then signs its half.</p>
-      </div>
-      <div class="step">
-        <div class="who">GoBTC Pay</div>
-        <h3>Co-signs in seconds</h3>
-        <p>2-of-3 wallet: funds are committed the moment GoBTC co-signs. Settles on Bitcoin later.</p>
-      </div>
-      <div class="step">
-        <div class="who">University</div>
-        <h3>Receives CAD</h3>
-        <p>Converts at a rate locked at request and shown to everyone. Never has to hold crypto.</p>
+
+    <div class="pipe">
+      <svg viewBox="0 0 1424 200" style="width:100%" role="img" aria-label="Parent sets rules, student uploads invoice, the agent reads checks and signs, GoBTC co-signs, the university receives Canadian dollars">
+        <path d="M142 100 H272 M426 100 H556 M710 100 H840 M994 100 H1124" stroke="#E0E3EC" stroke-width="3"/>
+        <path d="M272 100 l-14 -8 v16 z M556 100 l-14 -8 v16 z M840 100 l-14 -8 v16 z M1124 100 l-14 -8 v16 z" fill="#C6CBD8"/>
+
+        <!-- 1 parent: sliders -->
+        <circle cx="90" cy="100" r="52" fill="#fff" stroke="#E0E3EC" stroke-width="2"/>
+        <path d="M66 84h48M66 100h48M66 116h48" stroke="#0A0B3B" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="82" cy="84" r="7" fill="#D2102C"/><circle cx="102" cy="100" r="7" fill="#D2102C"/><circle cx="90" cy="116" r="7" fill="#D2102C"/>
+
+        <!-- 2 student: upload -->
+        <circle cx="349" cy="100" r="52" fill="#fff" stroke="#E0E3EC" stroke-width="2"/>
+        <rect x="327" y="78" width="44" height="52" rx="6" fill="none" stroke="#0A0B3B" stroke-width="4"/>
+        <path d="M349 118V92m0-10l-11 12m11-12l11 12" stroke="#D2102C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- 3 agent (highlight) -->
+        <circle cx="633" cy="100" r="62" fill="#0A0B3B"/>
+        <rect x="609" y="76" width="48" height="48" rx="9" fill="none" stroke="#fff" stroke-width="4"/>
+        <path d="M621 88h24v24h-24z" fill="#E5435A"/>
+        <path d="M633 76V62M633 138v-14M609 100H595M671 100h-14" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+
+        <!-- 4 GoBTC: two keys -->
+        <circle cx="917" cy="100" r="52" fill="#fff" stroke="#E0E3EC" stroke-width="2"/>
+        <text x="917" y="96" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="30" fill="#0A0B3B">2 of 3</text>
+        <text x="917" y="122" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#D2102C" letter-spacing="1.4">CO-SIGN</text>
+
+        <!-- 5 university -->
+        <circle cx="1201" cy="100" r="52" fill="#fff" stroke="#E0E3EC" stroke-width="2"/>
+        <path d="M1167 92l34-18 34 18-34 18z" fill="none" stroke="#0A0B3B" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M1181 101v20c0 7 9 12 20 12s20-5 20-12v-20" fill="none" stroke="#0A0B3B" stroke-width="4"/>
+
+        <!-- CAD badge -->
+        <rect x="1280" y="74" width="120" height="52" rx="26" fill="#E3F4EE" stroke="#BEE4D6" stroke-width="2"/>
+        <text x="1340" y="108" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="24" fill="#12734F">CAD</text>
+      </svg>
+      <div class="pipelabels">
+        <div><div class="w">Parent</div><div class="t">Sets the rules</div></div>
+        <div><div class="w">Student</div><div class="t">Uploads the invoice</div></div>
+        <div class="u"><div class="w">TuitionPilot</div><div class="t">Reads, checks, signs</div></div>
+        <div><div class="w">GoBTC Pay</div><div class="t">Co-signs in seconds</div></div>
+        <div><div class="w">University</div><div class="t">Receives CAD</div></div>
       </div>
     </div>
-    <div class="band"><b>Proof</b> The family and the school get the same receipt: payment ID, locked rate, network fee, committed and settled times.</div>
+
+    <div class="band"><b>Proof</b> Family and school get the same receipt: payment ID, locked rate, fee, timestamps.</div>
     <div class="brand"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
-    <div class="num">04 / 11</div>
+    <div class="num">04 / 12</div>
   </div></section>
 
   <!-- 5 · Demo -->
@@ -301,42 +375,30 @@ tr.us td { color: var(--red-600); font-weight: 600; }
         <span><span class="pill ok">Paid · committed</span></span>
         <div class="label">Fall 2026 tuition</div>
         <div class="amt">CAD 8,450</div>
-        <ul>
-          <li>All 8 rules pass</li>
-          <li>Payee and amount re-verified on the payment request</li>
-          <li>Real Bitcoin mainnet payment, scaled for the demo</li>
-        </ul>
-        <div class="out">Paid in seconds. Receipt for family and school.</div>
+        <ul><li>All 8 rules pass</li><li>Real payment on Bitcoin mainnet</li></ul>
+        <div class="out">Paid in seconds. Receipt for both sides.</div>
       </div>
       <div class="card inv">
         <span><span class="pill no">Refused · payee</span></span>
         <div class="label">“Updated payment details”</div>
         <div class="amt">CAD 8,450</div>
-        <ul>
-          <li>New merchant ID, not the one the parent approved</li>
-          <li>Hidden text told “payment assistants” to skip checks</li>
-          <li>Agent treats invoice text as data and flags it</li>
-        </ul>
-        <div class="out">Nothing signed. Parent told to verify with the school.</div>
+        <ul><li>Not the merchant the parent approved</li><li>Hidden text told the agent to skip checks</li></ul>
+        <div class="out">Nothing signed. Family warned.</div>
       </div>
       <div class="card inv">
         <span><span class="pill no">Refused · over cap</span></span>
         <div class="label">Fall 2026 with extra fees</div>
         <div class="amt">CAD 12,400</div>
-        <ul>
-          <li>Right school, right student</li>
-          <li>CAD 3,400 over the CAD 9,000 term cap</li>
-          <li>Upload it twice: still one decision, zero payments</li>
-        </ul>
-        <div class="out">Nothing paid. Parent can raise the cap or query the fees.</div>
+        <ul><li>CAD 3,400 over the term cap</li><li>Upload it twice: still zero payments</li></ul>
+        <div class="out">Nothing paid. Parent decides.</div>
       </div>
     </div>
     <div class="honest" style="margin-bottom:52px">
-      <span class="pill ok">Real</span><span class="t">Mainnet payments on GoBTC’s instant rail · agent’s 2-of-3 wallet · Claude invoice reading · rules · pay-once protection</span>
-      <span class="pill hold">Mocked</span><span class="t">University is our own GoBTC merchant · amounts scaled 1 : 5,000 · CAD conversion simulated</span>
+      <span class="pill ok">Real</span><span class="t">Mainnet payment · 2-of-3 wallet · Claude invoice reading · rules · pay-once</span>
+      <span class="pill hold">Mocked</span><span class="t">We play the university · amounts scaled 1 : 5,000 · CAD conversion simulated</span>
     </div>
     <div class="brand"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
-    <div class="num">05 / 11</div>
+    <div class="num">05 / 12</div>
   </div></section>
 
   <!-- 6 · Why it's safe -->
@@ -347,27 +409,27 @@ tr.us td { color: var(--red-600); font-weight: 600; }
       <div class="pillar">
         <div class="k">Mandate</div>
         <h3>Rules in code, checked twice</h3>
-        <p>Payee pinned by the parent, student, currency, term cap, payment window, autopay. Re-checked right before signing; the model can’t override it.</p>
+        <p>Payee, student, currency, cap, window, autopay — re-checked before signing. The model can’t override them.</p>
       </div>
       <div class="pillar">
         <div class="k">Idempotency</div>
         <h3>One payment per invoice</h3>
-        <p>Order key hashed from the invoice, database claim before paying, GoBTC’s externalId. A network error means reconcile, never re-submit.</p>
+        <p>Order key from the invoice, claimed in the database before paying. Network error means reconcile, never resend.</p>
       </div>
       <div class="pillar">
         <div class="k">Paid vs settled</div>
-        <h3>Committed in seconds, final in ~12 h</h3>
-        <p>“Paid” = GoBTC co-signed, so no double spend: enough to meet the deadline. The final receipt waits for on-chain settlement.</p>
+        <h3>Committed in seconds</h3>
+        <p>GoBTC co-signs, so the coins can’t move elsewhere. That meets the deadline; the chain confirms later.</p>
       </div>
       <div class="pillar">
-        <div class="k">Exchange rate</div>
+        <div class="k">Rate</div>
         <h3>Locked, verified, shown</h3>
-        <p>CAD amount priced in sats at request, locked 30 min. The agent checks the transaction amount matches before signing.</p>
+        <p>Priced in sats at request and held 30 minutes. The agent checks the amount before it signs.</p>
       </div>
     </div>
     <div class="stack">Claude tool use · GoBTC Pay instant rail (2-of-3 P2WSH) · local signing · Next.js · SQLite audit trail</div>
     <div class="brand"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#FFFFFF"/></svg>TuitionPilot</div>
-    <div class="num">06 / 11</div>
+    <div class="num">06 / 12</div>
   </div></section>
 
   <!-- 7 · Competitive analysis -->
@@ -377,16 +439,16 @@ tr.us td { color: var(--red-600); font-weight: 600; }
     <div class="two">
       <div class="card">
         <table>
-          <thead><tr><th>How families pay today</th><th style="padding-left:18px">All-in cost</th><th style="padding-left:18px">Time</th></tr></thead>
+          <thead><tr><th>How families pay today</th><th style="padding-left:18px">Cost</th><th style="padding-left:18px">Time</th></tr></thead>
           <tbody>
-            <tr><td>Bank wire<span class="kind">Direct</span></td><td class="v">CAD 25–50 + 2–4%</td><td class="v">1–5 days</td></tr>
+            <tr><td>Bank wire<span class="kind">Direct</span></td><td class="v">25–50 + 2–4%</td><td class="v">1–5 days</td></tr>
             <tr><td>Flywire<span class="kind">Direct</span></td><td class="v">≈ 2–3%</td><td class="v">1–3 days</td></tr>
             <tr><td>Convera<span class="kind">Direct</span></td><td class="v">≈ 1.5–2%</td><td class="v">1–3 days</td></tr>
-            <tr><td>Parallel market, P2P crypto, “an agent who knows someone”<span class="kind">Indirect — where the wire fails</span></td><td class="v">5–15%, no recourse</td><td class="v">hours–days</td></tr>
-            <tr class="us"><td>TuitionPilot<span class="kind" style="color:var(--red-400)">Access + guardrails</span></td><td class="v">≈ 1.5–4.5% all-in</td><td class="v">seconds</td></tr>
+            <tr><td>Parallel market, P2P crypto<span class="kind">Indirect — when the wire fails</span></td><td class="v">5–15%</td><td class="v">hours–days</td></tr>
+            <tr class="us"><td>TuitionPilot<span class="kind" style="color:var(--red-400)">Access + guardrails</span></td><td class="v">≈ 1.5–4.5%</td><td class="v">seconds</td></tr>
           </tbody>
         </table>
-        <p style="font-size:17px;line-height:1.5;color:var(--slate-500);margin:16px 0 0">Competitive, not cheapest — and we never promise the best rate, only a locked, visible one. Our real competition isn’t Flywire. It’s the parallel market a family turns to when the bank says no.</p>
+        <p style="font-size:18px;line-height:1.5;color:var(--slate-500);margin:18px 0 0">Our competition isn’t Flywire. It’s the parallel market a family uses when the bank says no.</p>
         <div class="src" style="margin-top:auto">Flywire/Convera margins · Canadian exchange fee tables · 2025–2026</div>
       </div>
       <div class="card" style="display:flex;flex-direction:column">
@@ -409,11 +471,11 @@ tr.us td { color: var(--red-600); font-weight: 600; }
           <text x="452" y="70" text-anchor="end" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="19" fill="#0A0B3B">TuitionPilot</text>
           <text x="452" y="90" text-anchor="end" font-family="IBM Plex Sans, sans-serif" font-size="14" fill="#6B7388">access + guardrails</text>
         </svg>
-        <p style="font-size:18px;line-height:1.45;color:var(--slate-500);margin:auto 0 0">The top-right corner is empty today: the routes that still work when a bank won’t send money are exactly the ones with no fraud protection and no receipt.</p>
+        <p style="font-size:18px;line-height:1.45;color:var(--slate-500);margin:auto 0 0">The top-right corner is empty: the routes that still work have no protection and no receipt.</p>
       </div>
     </div>
     <div class="brand" style="bottom:22px"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
-    <div class="num" style="bottom:22px">07 / 11</div>
+    <div class="num" style="bottom:22px">07 / 12</div>
   </div></section>
 
   <!-- 8 · Market sizing -->
@@ -423,21 +485,21 @@ tr.us td { color: var(--red-600); font-weight: 600; }
     <div class="tam">
       <div class="tier t1">
         <div class="tag">TAM<span>Total addressable</span></div>
-        <div class="bar"><span class="n">CAD 25B / yr</span><span class="d">International tuition billed in Canada — 691,215 study-permit holders × ≈ CAD 36,400 average fees.</span></div>
+        <div class="bar"><span class="n">CAD 25B / yr</span><span class="d">691,215 study-permit holders × ≈ CAD 36,400 fees.</span></div>
       </div>
       <div class="tier t2">
         <div class="tag">SAM<span>Served available</span></div>
-        <div class="bar"><span class="n">CAD 1.0B / yr</span><span class="d">The Nigeria → Canada corridor: ≈ 26,500 study permits, the country Canada ranks 3rd for students and where FX rationing is documented.</span></div>
+        <div class="bar"><span class="n">CAD 1.0B / yr</span><span class="d">Nigeria → Canada: ≈ 26,500 permits, 3rd-largest source, documented FX rationing.</span></div>
       </div>
       <div class="tier t3">
         <div class="tag">TM<span>Year-one target</span></div>
-        <div class="bar"><span class="n">1,000 families</span><span class="d">≈ CAD 20M paid through the agent · ≈ CAD 200K fee revenue at a 1% family fee.</span></div>
+        <div class="bar"><span class="n">1,000 families</span><span class="d">≈ CAD 20M paid · ≈ CAD 200K at a 1% fee.</span></div>
       </div>
     </div>
-    <p class="lead" style="margin-top:24px;font-size:20px;max-width:1340px">Canada’s permit cap cut student numbers 26% in 2025 — so every school is now fighting for the students who <em>can</em> pay, and a failed wire is exactly how they lose them.</p>
-    <div class="src" style="margin-top:auto;margin-bottom:52px">IRCC study-permit holders, 31 Dec 2025 · Statistics Canada 2025/26 tuition (undergrad CAD 41,746 · grad CAD 24,028) · year-one target is our assumption, not a forecast</div>
+    <p class="lead" style="margin-top:26px;font-size:21px;max-width:1340px">Canada’s permit cap cut student numbers 26% in 2025. Every school is now fighting for the students who <em>can</em> pay.</p>
+    <div class="src" style="margin-top:auto;margin-bottom:52px">IRCC study-permit holders, 31 Dec 2025 · Statistics Canada 2025/26 tuition · year-one target is our assumption, not a forecast</div>
     <div class="brand"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
-    <div class="num">08 / 11</div>
+    <div class="num">08 / 12</div>
   </div></section>
 
   <!-- 9 · Go to market -->
@@ -449,41 +511,36 @@ tr.us td { color: var(--red-600); font-weight: 600; }
         <div class="when">Now · validated</div>
         <h3 style="margin-top:10px">It works, on mainnet</h3>
         <ul>
-          <li>Real Bitcoin payment end to end, from the agent’s own 2-of-3 wallet</li>
-          <li>8 rules enforced in code; fraud and over-cap invoices refused</li>
-          <li>Zero duplicate payments across retries and re-uploads</li>
-          <li>FINTRAC-shaped onboarding and PIPEDA self-service built</li>
+          <li>Real Bitcoin payment, end to end</li>
+          <li>Fraud and over-cap invoices refused</li>
+          <li>Zero duplicate payments</li>
         </ul>
       </div>
       <div class="card top">
         <div class="when">Next 6 months</div>
         <h3 style="margin-top:10px">Nigeria → Canada, for real</h3>
         <ul>
-          <li>Licensed off-ramp partner so the school is paid CAD directly</li>
-          <li>Stablecoin rail (USDT/USDC) — what families actually hold</li>
-          <li>Accounts, parent approval by phone, deadline reminders</li>
-          <li>FINTRAC registration, or operate through a licensed partner</li>
+          <li>Off-ramp partner pays the school in CAD</li>
+          <li>Stablecoin rail — what families hold</li>
+          <li>FINTRAC registration, or a licensed partner</li>
         </ul>
       </div>
       <div class="card top">
-        <div class="when">How we reach families</div>
+        <div class="when">Channel</div>
         <h3 style="margin-top:10px">Where the pain is known</h3>
         <ul>
-          <li>Validation first: 10 Nigerian families, 2 international-student offices</li>
-          <li>Education agents — they already own the relationship</li>
-          <li>University international offices, who carry the unpaid-fee problem</li>
-          <li>Diaspora and alumni communities in the corridor</li>
+          <li>Education agents — they own the relationship</li>
+          <li>University international offices</li>
+          <li>Diaspora communities in the corridor</li>
         </ul>
       </div>
     </div>
     <div class="brand" style="bottom:22px"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
-    <div class="num" style="bottom:22px">09 / 11</div>
+    <div class="num" style="bottom:22px">09 / 12</div>
   </div></section>
 
   <!-- 10 · Team
-       EDIT ME: to add a teammate, change .team to three columns and copy a .person block:
-       <div class="person"><div class="nm">Name</div><div class="ro">Role</div><p>One line of relevant experience.</p>
-       <div class="skills"><span>Skill</span><span>Skill</span></div></div>  -->
+       EDIT ME: to add a teammate, copy a .person block and set .team to three columns. -->
   <section class="frame"><div class="slide">
     <div class="eyebrow">// Team</div>
     <h2>One builder. The agent, the payment rail and the compliance work.</h2>
@@ -491,57 +548,84 @@ tr.us td { color: var(--red-600); font-weight: 600; }
       <div class="person">
         <div class="nm">Jafar Pashami</div>
         <div class="ro">Founder · Novalycs</div>
-        <p>Built TuitionPilot end to end for this hackathon: the Claude agent, the Bitcoin signing path on GoBTC Pay, the rule engine, and the FINTRAC and PIPEDA onboarding most demos leave out.</p>
-        <p>Previously built CitaPay, a cross-border payments product — the same corridor problem, from the other side.</p>
-        <div class="skills"><span>Payments engineering</span><span>AI agents</span><span>Bitcoin / multisig</span><span>Compliance by design</span><span>Product</span></div>
+        <p>Built all of TuitionPilot for this hackathon: the Claude agent, the Bitcoin signing path, the rule engine, and the FINTRAC and PIPEDA onboarding most demos skip.</p>
+        <div class="skills"><span>Payments engineering</span><span>AI agents</span><span>Bitcoin / multisig</span><span>Compliance by design</span></div>
       </div>
       <div class="proof">
-        <div class="card top">
-          <div class="stat">End to end</div>
-          <p>Invoice reading, rule enforcement, signing, settlement tracking, receipts, admin and compliance queue — one person, one hackathon.</p>
-        </div>
         <div class="card top">
           <div class="stat">Shipped, not slides</div>
           <p>A real mainnet payment, an audit trail for every agent decision, and an honest list of what is still mocked.</p>
         </div>
         <div class="card top">
-          <div class="stat">What we add next</div>
-          <p>A compliance lead for FINTRAC registration and a corridor partner in Lagos — the two roles the next six months need.</p>
+          <div class="stat">Hiring next</div>
+          <p>A compliance lead for FINTRAC, and a corridor partner in Lagos.</p>
         </div>
       </div>
     </div>
     <div class="brand" style="bottom:22px"><svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
-    <div class="num" style="bottom:22px">10 / 11</div>
+    <div class="num" style="bottom:22px">10 / 12</div>
   </div></section>
 
   <!-- 11 · The ask -->
   <section class="frame"><div class="slide dark">
     <div class="eyebrow">// The ask</div>
-    <h2>Four things, and the first payment for a real family happens this year.</h2>
+    <h2>Four things, and a real family pays tuition this year.</h2>
     <div class="asks">
-      <div class="ask" style="background:#fff">
+      <div class="ask">
         <div class="k">Connections</div>
         <h3>An off-ramp partner</h3>
-        <p>A licensed exchange or education-payments company that already takes stablecoins and can pay a Canadian bursar in CAD.</p>
+        <p>Takes stablecoins, pays a Canadian bursar in CAD.</p>
       </div>
-      <div class="ask" style="background:#fff">
+      <div class="ask">
         <div class="k">Pilot</div>
-        <h3>One university international office</h3>
-        <p>A school willing to pin its bursar details and take ten real payments through the agent.</p>
+        <h3>One university office</h3>
+        <p>Pin its bursar details, take ten real payments.</p>
       </div>
-      <div class="ask" style="background:#fff">
+      <div class="ask">
         <div class="k">Mentorship</div>
-        <h3>FINTRAC and MSB guidance</h3>
-        <p>Register as a money services business, or launch under a licensed partner — we want the faster of the two, done properly.</p>
+        <h3>FINTRAC guidance</h3>
+        <p>Register, or launch under a licensed partner.</p>
       </div>
-      <div class="ask" style="background:#fff">
+      <div class="ask">
         <div class="k">Sign-ups</div>
-        <h3>10 families in the corridor</h3>
-        <p>Nigerian parents paying Canadian tuition this term, to validate the fee and the moment the wire actually fails.</p>
+        <h3>10 families in Lagos</h3>
+        <p>Paying Canadian tuition this term.</p>
       </div>
     </div>
     <div class="close" style="background:#fff;color:var(--navy-900);margin-top:26px;margin-bottom:46px">Families set the rules. TuitionPilot makes sure the school gets paid — once, on time, to the right account.</div>
-    <div class="num" style="bottom:20px">11 / 11</div>
+    <div class="num" style="bottom:20px">11 / 12</div>
+  </div></section>
+
+  <!-- 12 · Thanks + sponsors
+       LOGOS: drop real files at docs/deck/logos/<name>.svg (or .png) and they replace the
+       wordmark automatically. Expected: agnic.svg, gobtc-pay.svg. Add another sponsor by
+       copying a .sp block. -->
+  <section class="frame"><div class="slide dark">
+    <div class="eyebrow">// Thank you</div>
+    <h2 style="font-size:50px">Built at Agentic Commerce Pioneers, Edition II.</h2>
+
+    <div class="sponsors">
+      <div class="sp">
+        <span class="role">Organizer</span>
+        <img src="logos/agnic.svg" alt="Agnic AI">
+        <span class="wm" hidden>Agnic<i> AI</i></span>
+      </div>
+      <div class="sp">
+        <span class="role">Track 2 sponsor</span>
+        <img src="logos/gobtc-pay.svg" alt="GoBTC Pay">
+        <span class="wm" hidden>GoBTC<i> Pay</i></span>
+      </div>
+    </div>
+
+    <div class="thanks">
+      <div class="big">Tuition that<br>pays itself.</div>
+      <div class="links">
+        <b>tuitionpilot.jpashami.workers.dev</b><br>
+        github.com/jpashami/tuitionpilot<br>
+        Jafar Pashami · Novalycs
+      </div>
+    </div>
+    <div class="num" style="bottom:20px">12 / 12</div>
   </div></section>
 
 </div>
@@ -569,5 +653,12 @@ tr.us td { color: var(--red-600); font-weight: 600; }
       f.style.cssText = 'width:1600px;height:900px;max-width:none;aspect-ratio:auto;border-radius:0;box-shadow:none';
     });
   }
+  // Sponsor logos: fall back to a wordmark when the image file isn't present.
+  document.querySelectorAll('.sp img').forEach(function (img) {
+    function useWordmark() { img.hidden = true; var wm = img.nextElementSibling; if (wm) wm.hidden = false; }
+    img.addEventListener('error', useWordmark);
+    if (img.complete && img.naturalWidth === 0) useWordmark();
+  });
+
   fit();
 </script>

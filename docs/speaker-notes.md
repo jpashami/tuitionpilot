@@ -1,7 +1,25 @@
 # TuitionPilot — timed speaker notes
 
 **Slot:** 5 minutes · **Deck:** 12 slides · **Presenter:** Jafar Pashami
-**Pace:** ~145 words per minute. The script is 642 spoken words — about 4:26 of talking, leaving roughly 35 seconds of slack for the agent's live runs on slide 06. Each run takes 30–40 seconds, so talk over them rather than watching the spinner.
+**Pace:** ~145 words per minute. The script is 642 spoken words — 4:26 of talking.
+
+## Does 5 minutes work?
+
+Yes, but only with **two live agent runs, not three.**
+
+The speech fits comfortably: 4:26 against a 5:00 slot. The constraint is not talking, it is the agent's wall clock. Each run takes 30–40 seconds, and you cannot talk for the whole of it without repeating yourself.
+
+| Demo plan | Demo takes | Whole pitch | Verdict |
+|---|---|---|---|
+| 3 live runs (fraud, real, over-cap) | 105–120s | **5:23** | over |
+| **2 live runs** (fraud, real) | 70–80s | **4:53** | fits, ~7s spare |
+| 1 live run (real only), rest pre-run | 35–40s | 4:18 | comfortable |
+
+**Run this plan:** do the fraud invoice and the real payment live. Run the over-cap invoice and the duplicate upload *before* you present, so their results are already on screen — then point at them. Same evidence, five seconds instead of seventy.
+
+**Checkpoint:** you should be starting the demo at **2:15**. If you reach slide 06 later than 2:30, drop to one live run — pre-run the fraud invoice before you present and show the refused result on screen.
+
+The runs are also the only part you don't control. If one is slow, keep narrating the audit trail as events arrive; don't stop and watch.
 
 Open the deck at `/deck/` and use fullscreen, or present the PDF. `?slide=N` opens one slide at native size.
 
@@ -14,7 +32,7 @@ Open the deck at `/deck/` and use fullscreen, or present the PDF. `?slide=N` ope
 | 0:57 | 03 · Value proposition | The statement | 0:23 |
 | 1:20 | 04 · How it works | The path of one payment | 0:25 |
 | 1:45 | 05 · Architecture | Model reads, code decides | 0:30 |
-| 2:15 | 06 · Demo | **Pays one, refuses two** | 1:10 |
+| 2:15 | 06 · Demo | **Two live runs** | 1:15 |
 | 3:25 | 07 · Competition | What exists today | 0:20 |
 | 3:45 | 08 · Market | TAM / SAM / TM | 0:20 |
 | 4:05 | 09 · Built / next | Honest status | 0:18 |
@@ -70,21 +88,21 @@ The demo is the centre. If you are behind, cut from 07–09, never from 06.
 
 *This slide is why the demo is believable. Don't rush it.*
 
-## 2:15 · Slide 06 — Demo (70s)
+## 2:15 · Slide 06 — Demo (75s — two live runs)
 
-**Switch to the live app. Queue the invoices in this order.**
+**Switch to the live app. Run the fraud invoice and the real payment live. The over-cap invoice and the duplicate upload are already on screen from your pre-demo test — point at them, don't re-run them.**
 
-> Three invoices.
+> Three invoices on the slide. I'll run two of them live.
 >
-> **[Invoice 1 — the fraud]** This one says "updated payment details," and hidden in the text is an instruction telling payment assistants to skip the checks. The agent reads the invoice — but the rules run in code. It isn't the merchant the parent approved. Refused. Nothing signed.
+> **[Run 1 — the fraud]** This one says "updated payment details," and hidden in the text is an instruction telling payment assistants to skip the checks. The agent reads the invoice — but the rules run in code. It isn't the merchant the parent approved. Refused. Nothing signed.
 >
-> **[Invoice 2 — the real one]** The real invoice: eight thousand four hundred and fifty dollars. All eight rules pass. GoBTC issues the request and locks the Bitcoin price. The agent verifies the payee and the amount, signs locally, submits.
+> **[Run 2 — the real invoice]** Now the real one: eight thousand four hundred and fifty dollars. All eight rules pass. GoBTC issues the request and locks the Bitcoin price. The agent verifies the payee and the amount, signs locally, submits.
 >
-> **[Hold on the status]** Paid. GoBTC has co-signed, so those coins can't go anywhere else — the deadline is met. This is a real payment on Bitcoin mainnet, scaled down for the demo.
+> **[Hold on the status change]** Paid. GoBTC has co-signed, so those coins can't go anywhere else — the deadline is met. This is a real payment on Bitcoin mainnet, scaled down for the demo.
 >
-> **[Upload invoice 2 again]** Same invoice again — duplicate. No second payment.
+> **[Point at the rows already on screen]** The third one is there from earlier: three thousand four hundred over the term cap, refused. And below it, the same invoice uploaded twice — one order key, no second payment.
 
-*If a run stalls, keep talking and move on.*
+*Narrate the audit trail while each run works. If one stalls, move on — don't watch it.*
 
 ## 3:25 · Slide 07 — Competition (20s)
 
@@ -120,9 +138,10 @@ The demo is the centre. If you are behind, cut from 07–09, never from 06.
 
 Cut in this order — each is self-contained:
 
-1. Slide 09 (–18s)
-2. Slide 07, down to the one line about the parallel market (–14s)
-3. Slide 08, down to the first sentence (–12s)
+1. Drop to one live run on slide 06 — pre-run the fraud invoice (–35s, by far the biggest saving)
+2. Slide 09 (–18s)
+3. Slide 07, down to the one line about the parallel market (–14s)
+4. Slide 08, down to the first sentence (–12s)
 
 ## Questions to expect
 
@@ -157,3 +176,5 @@ The interesting problem wasn't Bitcoin — it was deciding what the model is all
 - [ ] Re-export the PDF after adding either (`npm run site:build`, then print `/deck/` from the browser)
 - [ ] Wallet funded, `PAYMENTS_ENABLED=true`, `npm run dev` restarted
 - [ ] Demo samples created in order: "Updated payment details", then "Fall 2026 tuition"
+- [ ] Run the over-cap invoice and the duplicate upload **before** presenting, so both results are already on screen
+- [ ] Time one agent run on the day — if it is over 40s, switch to the one-live-run plan

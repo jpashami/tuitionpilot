@@ -4,9 +4,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 :root {
-  --navy-950: #0A0C10; --navy-900: #111418; --navy-700: #2B303A; --navy-500: #697082; --navy-300: #B3B9C6;
-  --red-600: #1746C4; --red-500: #2159E6; --red-100: #E6EDFD;
-  --slate-50: #F6F7F9; --slate-100: #ECEEF2; --slate-200: #DDE0E7; --slate-400: #949BA8; --slate-500: #636A78; --slate-900: #111418;
+  --navy-950: #060726; --navy-900: #0A0B3B; --navy-700: #20235A; --navy-500: #4A4F9E; --navy-300: #9EA1D6;
+  --red-600: #B80E27; --red-500: #D2102C; --red-100: #FBE5E8;
+  --slate-50: #F7F8FB; --slate-100: #EEF0F5; --slate-200: #E0E3EC; --slate-400: #98A0B5; --slate-500: #6B7388; --slate-900: #1A1E2C;
   --ok: #1F9D72; --ok-bg: #E3F4EE; --ok-ink: #12734F; --hold-bg: #FBF0DC; --hold-ink: #7A4F09;
   --display: 'Inter Tight', 'Segoe UI', system-ui, sans-serif;
   --sans: 'Inter', 'Segoe UI', system-ui, sans-serif;
@@ -34,9 +34,9 @@ h2 { font-size: 54px; line-height: 1.06; margin-top: 16px; max-width: 1340px; }
 .card p { font-size: 19px; line-height: 1.5; color: var(--slate-500); margin: 0; }
 .grid { display: grid; gap: 22px; }
 .pill { display: inline-block; font-family: var(--mono); font-size: 14px; letter-spacing: .08em; text-transform: uppercase; padding: 5px 13px; border-radius: 999px; border: 1px solid; }
-.pill.ok { background: var(--ok-bg); color: var(--ok-ink); border-color: #BEE4D6; }
-.pill.no { background: #FBE5E8; color: #A50C22; border-color: #F4B8C1; }
-.pill.hold { background: var(--hold-bg); color: var(--hold-ink); border-color: #EBD5A8; }
+.pill.ok { background: #12734F; color: #fff; border-color: #12734F; }
+.pill.no { background: #A50C22; color: #fff; border-color: #A50C22; }
+.pill.hold { background: #7A4F09; color: #fff; border-color: #7A4F09; }
 
 /* sponsor lockups — monochrome, used on the title and closing slides */
 .splock { display: flex; align-items: flex-end; gap: 54px; }
@@ -160,7 +160,7 @@ tr.us td { color: var(--red-600); font-weight: 600; }
   <!-- 1 · Title -->
   <section class="frame"><div class="slide s1">
     <div class="lockup">
-      <svg width="58" height="58" viewBox="0 0 64 64" role="img" aria-label="TuitionPilot"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#2159E6"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#111418"/></svg>
+      <svg width="58" height="58" viewBox="0 0 64 64" role="img" aria-label="TuitionPilot"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>
       <div><b>TuitionPilot</b><span>A NOVALYCS PROJECT</span></div>
     </div>
     <h1>An AI agent that pays international tuition.</h1>
@@ -195,7 +195,7 @@ tr.us td { color: var(--red-600); font-weight: 600; }
 
       <div class="side">
         <svg width="54" height="54" viewBox="0 0 48 48" aria-hidden="true">
-          <circle cx="24" cy="24" r="23" fill="#111418"/>
+          <circle cx="24" cy="24" r="23" fill="#0A0B3B"/>
           <circle cx="24" cy="19" r="6.5" fill="#fff"/>
           <path d="M13 36c0-6.2 4.9-10 11-10s11 3.8 11 10z" fill="#fff"/>
         </svg>
@@ -207,7 +207,7 @@ tr.us td { color: var(--red-600); font-weight: 600; }
 
       <div class="side">
         <svg width="54" height="54" viewBox="0 0 48 48" aria-hidden="true">
-          <circle cx="24" cy="24" r="23" fill="#2159E6"/>
+          <circle cx="24" cy="24" r="23" fill="#D2102C"/>
           <path d="M24 11l13 6.5-13 6.5-13-6.5z" fill="#fff"/>
           <path d="M16 22v7c0 2.8 3.6 5 8 5s8-2.2 8-5v-7" fill="none" stroke="#fff" stroke-width="2.6"/>
         </svg>
@@ -219,7 +219,7 @@ tr.us td { color: var(--red-600); font-weight: 600; }
 
       <div class="side">
         <svg width="54" height="54" viewBox="0 0 48 48" aria-hidden="true">
-          <circle cx="24" cy="24" r="23" fill="#2B303A"/>
+          <circle cx="24" cy="24" r="23" fill="#20235A"/>
           <path d="M13 33h22M15 33V22m6 11V22m6 11V22m6 11V22M24 13l13 7H11z" stroke="#fff" stroke-width="2.4" fill="none" stroke-linejoin="round"/>
         </svg>
         <div class="who">University · is owed</div>
@@ -229,7 +229,7 @@ tr.us td { color: var(--red-600); font-weight: 600; }
       </div>
 
     </div>
-    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#2159E6"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#111418"/></svg>TuitionPilot</div>
+    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
     <div class="num">02 / 12</div>
   </div></section>
 
@@ -257,7 +257,7 @@ tr.us td { color: var(--red-600); font-weight: 600; }
         <div class="p">The family sets rules once. The agent refuses anything that doesn’t match them.</div>
       </div>
     </div>
-    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#2159E6"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#111418"/></svg>TuitionPilot</div>
+    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
     <div class="num">03 / 12</div>
   </div></section>
 
@@ -268,24 +268,24 @@ tr.us td { color: var(--red-600); font-weight: 600; }
 
     <div class="pipe">
       <svg viewBox="0 0 1424 200" style="width:100%" role="img" aria-label="Parent sets rules, student uploads the invoice, the agent reads checks and signs, GoBTC Pay co-signs, the university receives Canadian dollars">
-        <path d="M142 100 H272 M426 100 H556 M710 100 H840 M994 100 H1124" stroke="#DDE0E7" stroke-width="3"/>
-        <path d="M272 100 l-14 -8 v16 z M556 100 l-14 -8 v16 z M840 100 l-14 -8 v16 z M1124 100 l-14 -8 v16 z" fill="#C3C8D2"/>
-        <circle cx="90" cy="100" r="52" fill="#fff" stroke="#DDE0E7" stroke-width="2"/>
-        <path d="M66 84h48M66 100h48M66 116h48" stroke="#111418" stroke-width="4" stroke-linecap="round"/>
-        <circle cx="82" cy="84" r="7" fill="#2159E6"/><circle cx="102" cy="100" r="7" fill="#2159E6"/><circle cx="90" cy="116" r="7" fill="#2159E6"/>
-        <circle cx="349" cy="100" r="52" fill="#fff" stroke="#DDE0E7" stroke-width="2"/>
-        <rect x="327" y="78" width="44" height="52" rx="6" fill="none" stroke="#111418" stroke-width="4"/>
-        <path d="M349 118V92m0-10l-11 12m11-12l11 12" stroke="#2159E6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="633" cy="100" r="62" fill="#111418"/>
+        <path d="M142 100 H272 M426 100 H556 M710 100 H840 M994 100 H1124" stroke="#E0E3EC" stroke-width="3"/>
+        <path d="M272 100 l-14 -8 v16 z M556 100 l-14 -8 v16 z M840 100 l-14 -8 v16 z M1124 100 l-14 -8 v16 z" fill="#C6CBD8"/>
+        <circle cx="90" cy="100" r="52" fill="#fff" stroke="#E0E3EC" stroke-width="2"/>
+        <path d="M66 84h48M66 100h48M66 116h48" stroke="#0A0B3B" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="82" cy="84" r="7" fill="#D2102C"/><circle cx="102" cy="100" r="7" fill="#D2102C"/><circle cx="90" cy="116" r="7" fill="#D2102C"/>
+        <circle cx="349" cy="100" r="52" fill="#fff" stroke="#E0E3EC" stroke-width="2"/>
+        <rect x="327" y="78" width="44" height="52" rx="6" fill="none" stroke="#0A0B3B" stroke-width="4"/>
+        <path d="M349 118V92m0-10l-11 12m11-12l11 12" stroke="#D2102C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="633" cy="100" r="62" fill="#0A0B3B"/>
         <rect x="609" y="76" width="48" height="48" rx="9" fill="none" stroke="#fff" stroke-width="4"/>
-        <path d="M621 88h24v24h-24z" fill="#2159E6"/>
+        <path d="M621 88h24v24h-24z" fill="#D2102C"/>
         <path d="M633 76V62M633 138v-14M609 100H595M671 100h-14" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
-        <circle cx="917" cy="100" r="52" fill="#fff" stroke="#DDE0E7" stroke-width="2"/>
-        <text x="917" y="96" text-anchor="middle" font-family="Inter Tight, sans-serif" font-weight="700" font-size="30" fill="#111418">2 of 3</text>
-        <text x="917" y="122" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#2159E6" letter-spacing="1.4">CO-SIGN</text>
-        <circle cx="1201" cy="100" r="52" fill="#fff" stroke="#DDE0E7" stroke-width="2"/>
-        <path d="M1167 92l34-18 34 18-34 18z" fill="none" stroke="#111418" stroke-width="4" stroke-linejoin="round"/>
-        <path d="M1181 101v20c0 7 9 12 20 12s20-5 20-12v-20" fill="none" stroke="#111418" stroke-width="4"/>
+        <circle cx="917" cy="100" r="52" fill="#fff" stroke="#E0E3EC" stroke-width="2"/>
+        <text x="917" y="96" text-anchor="middle" font-family="Inter Tight, sans-serif" font-weight="700" font-size="30" fill="#0A0B3B">2 of 3</text>
+        <text x="917" y="122" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="13" fill="#D2102C" letter-spacing="1.4">CO-SIGN</text>
+        <circle cx="1201" cy="100" r="52" fill="#fff" stroke="#E0E3EC" stroke-width="2"/>
+        <path d="M1167 92l34-18 34 18-34 18z" fill="none" stroke="#0A0B3B" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M1181 101v20c0 7 9 12 20 12s20-5 20-12v-20" fill="none" stroke="#0A0B3B" stroke-width="4"/>
         <rect x="1280" y="74" width="120" height="52" rx="26" fill="#E3F4EE" stroke="#BEE4D6" stroke-width="2"/>
         <text x="1340" y="108" text-anchor="middle" font-family="Inter Tight, sans-serif" font-weight="700" font-size="24" fill="#12734F">CAD</text>
       </svg>
@@ -299,7 +299,7 @@ tr.us td { color: var(--red-600); font-weight: 600; }
     </div>
 
     <div class="band"><b>Proof</b> The family and the school read the same receipt: payment ID, locked rate, network fee, and the times it was committed and settled.</div>
-    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#2159E6"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#111418"/></svg>TuitionPilot</div>
+    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
     <div class="num">04 / 12</div>
   </div></section>
 
@@ -313,54 +313,54 @@ tr.us td { color: var(--red-600); font-weight: 600; }
       <svg viewBox="0 0 1424 420" style="width:100%" role="img" aria-label="Architecture: the Next.js app sends the invoice to Claude, which returns fields to a rule engine in code; only if the rules pass does GoBTC Pay issue a request and co-sign on Bitcoin mainnet; SQLite records every step">
 
         <!-- boxes -->
-        <rect x="0"    y="40" width="250" height="140" rx="14" fill="#F6F7F9" stroke="#DDE0E7" stroke-width="2"/>
-        <text x="125" y="90"  text-anchor="middle" font-family="Inter Tight, sans-serif" font-weight="700" font-size="25" fill="#111418">Next.js app</text>
-        <text x="125" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#636A78">upload · live timeline</text>
-        <text x="125" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#636A78">parent · bursar · admin</text>
+        <rect x="0"    y="40" width="250" height="140" rx="14" fill="#F7F8FB" stroke="#E0E3EC" stroke-width="2"/>
+        <text x="125" y="90"  text-anchor="middle" font-family="Inter Tight, sans-serif" font-weight="700" font-size="25" fill="#0A0B3B">Next.js app</text>
+        <text x="125" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#6B7388">upload · live timeline</text>
+        <text x="125" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#6B7388">parent · bursar · admin</text>
 
-        <rect x="290"  y="40" width="250" height="140" rx="14" fill="#111418"/>
+        <rect x="290"  y="40" width="250" height="140" rx="14" fill="#0A0B3B"/>
         <text x="415" y="90"  text-anchor="middle" font-family="Inter Tight, sans-serif" font-weight="700" font-size="25" fill="#fff">Claude</text>
-        <text x="415" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#B3B9C6">reads the invoice into</text>
-        <text x="415" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#B3B9C6">payee, amount, term, date</text>
+        <text x="415" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#9EA1D6">reads the invoice into</text>
+        <text x="415" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#9EA1D6">payee, amount, term, date</text>
 
-        <rect x="580"  y="40" width="250" height="140" rx="14" fill="#fff" stroke="#2159E6" stroke-width="3"/>
-        <text x="705" y="90"  text-anchor="middle" font-family="Inter Tight, sans-serif" font-weight="700" font-size="25" fill="#1746C4">Rule engine</text>
-        <text x="705" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#636A78">8 rules, plain TypeScript</text>
-        <text x="705" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#636A78">re-run before signing</text>
+        <rect x="580"  y="40" width="250" height="140" rx="14" fill="#fff" stroke="#D2102C" stroke-width="3"/>
+        <text x="705" y="90"  text-anchor="middle" font-family="Inter Tight, sans-serif" font-weight="700" font-size="25" fill="#B80E27">Rule engine</text>
+        <text x="705" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#6B7388">8 rules, plain TypeScript</text>
+        <text x="705" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#6B7388">re-run before signing</text>
 
-        <rect x="870"  y="40" width="250" height="140" rx="14" fill="#F6F7F9" stroke="#DDE0E7" stroke-width="2"/>
-        <text x="995" y="90"  text-anchor="middle" font-family="Inter Tight, sans-serif" font-weight="700" font-size="25" fill="#111418">GoBTC Pay</text>
-        <text x="995" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#636A78">payment request,</text>
-        <text x="995" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#636A78">co-signs 2 of 3</text>
+        <rect x="870"  y="40" width="250" height="140" rx="14" fill="#F7F8FB" stroke="#E0E3EC" stroke-width="2"/>
+        <text x="995" y="90"  text-anchor="middle" font-family="Inter Tight, sans-serif" font-weight="700" font-size="25" fill="#0A0B3B">GoBTC Pay</text>
+        <text x="995" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#6B7388">payment request,</text>
+        <text x="995" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#6B7388">co-signs 2 of 3</text>
 
-        <rect x="1160" y="40" width="250" height="140" rx="14" fill="#F6F7F9" stroke="#DDE0E7" stroke-width="2"/>
-        <text x="1285" y="90"  text-anchor="middle" font-family="Inter Tight, sans-serif" font-weight="700" font-size="25" fill="#111418">Bitcoin</text>
-        <text x="1285" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#636A78">mainnet, settles</text>
-        <text x="1285" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#636A78">in about 12 hours</text>
+        <rect x="1160" y="40" width="250" height="140" rx="14" fill="#F7F8FB" stroke="#E0E3EC" stroke-width="2"/>
+        <text x="1285" y="90"  text-anchor="middle" font-family="Inter Tight, sans-serif" font-weight="700" font-size="25" fill="#0A0B3B">Bitcoin</text>
+        <text x="1285" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#6B7388">mainnet, settles</text>
+        <text x="1285" y="146" text-anchor="middle" font-family="Inter, sans-serif" font-size="17" fill="#6B7388">in about 12 hours</text>
 
         <!-- arrows between boxes -->
-        <path d="M250 110 H282" stroke="#C3C8D2" stroke-width="3"/><path d="M290 110 l-14 -8 v16 z" fill="#C3C8D2"/>
-        <path d="M540 110 H572" stroke="#C3C8D2" stroke-width="3"/><path d="M580 110 l-14 -8 v16 z" fill="#C3C8D2"/>
-        <path d="M830 110 H862" stroke="#2159E6" stroke-width="3"/><path d="M870 110 l-14 -8 v16 z" fill="#2159E6"/>
-        <path d="M1120 110 H1152" stroke="#C3C8D2" stroke-width="3"/><path d="M1160 110 l-14 -8 v16 z" fill="#C3C8D2"/>
+        <path d="M250 110 H282" stroke="#C6CBD8" stroke-width="3"/><path d="M290 110 l-14 -8 v16 z" fill="#C6CBD8"/>
+        <path d="M540 110 H572" stroke="#C6CBD8" stroke-width="3"/><path d="M580 110 l-14 -8 v16 z" fill="#C6CBD8"/>
+        <path d="M830 110 H862" stroke="#D2102C" stroke-width="3"/><path d="M870 110 l-14 -8 v16 z" fill="#D2102C"/>
+        <path d="M1120 110 H1152" stroke="#C6CBD8" stroke-width="3"/><path d="M1160 110 l-14 -8 v16 z" fill="#C6CBD8"/>
 
         <!-- arrow captions -->
-        <text x="415" y="212" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" fill="#949BA8" letter-spacing="1">FIELDS ONLY — NEVER A DECISION</text>
-        <text x="850" y="212" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" fill="#1746C4" letter-spacing="1">ONLY IF ALL 8 RULES PASS</text>
+        <text x="415" y="212" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" fill="#98A0B5" letter-spacing="1">FIELDS ONLY — NEVER A DECISION</text>
+        <text x="850" y="212" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" fill="#B80E27" letter-spacing="1">ONLY IF ALL 8 RULES PASS</text>
 
         <!-- store -->
-        <rect x="0" y="262" width="1410" height="86" rx="14" fill="#fff" stroke="#DDE0E7" stroke-width="2"/>
-        <text x="40" y="298" font-family="Inter Tight, sans-serif" font-weight="700" font-size="23" fill="#111418">SQLite</text>
-        <text x="40" y="326" font-family="Inter, sans-serif" font-size="17" fill="#636A78">every agent step and decision, kept as an audit trail</text>
-        <text x="1370" y="298" text-anchor="end" font-family="Inter Tight, sans-serif" font-weight="700" font-size="23" fill="#111418">Order key</text>
-        <text x="1370" y="326" text-anchor="end" font-family="Inter, sans-serif" font-size="17" fill="#636A78">hashed from the invoice and claimed before paying — one payment per invoice</text>
-        <path d="M705 180 V240 M705 240 H705" stroke="#DDE0E7" stroke-width="2" stroke-dasharray="6 6"/>
-        <path d="M705 262 l-8 -14 h16 z" fill="#DDE0E7"/>
+        <rect x="0" y="262" width="1410" height="86" rx="14" fill="#fff" stroke="#E0E3EC" stroke-width="2"/>
+        <text x="40" y="298" font-family="Inter Tight, sans-serif" font-weight="700" font-size="23" fill="#0A0B3B">SQLite</text>
+        <text x="40" y="326" font-family="Inter, sans-serif" font-size="17" fill="#6B7388">every agent step and decision, kept as an audit trail</text>
+        <text x="1370" y="298" text-anchor="end" font-family="Inter Tight, sans-serif" font-weight="700" font-size="23" fill="#0A0B3B">Order key</text>
+        <text x="1370" y="326" text-anchor="end" font-family="Inter, sans-serif" font-size="17" fill="#6B7388">hashed from the invoice and claimed before paying — one payment per invoice</text>
+        <path d="M705 180 V240 M705 240 H705" stroke="#E0E3EC" stroke-width="2" stroke-dasharray="6 6"/>
+        <path d="M705 262 l-8 -14 h16 z" fill="#E0E3EC"/>
       </svg>
     </div>
 
     <div class="src" style="margin-bottom:54px">The signing key stays on the server. A submit that ends in a network error is reconciled against GoBTC, never resubmitted.</div>
-    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#2159E6"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#111418"/></svg>TuitionPilot</div>
+    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
     <div class="num">05 / 12</div>
   </div></section>
 
@@ -395,7 +395,7 @@ tr.us td { color: var(--red-600); font-weight: 600; }
       <span class="pill ok">Real</span><span class="t">Mainnet payment · 2-of-3 wallet · invoice reading · rules · pay-once protection</span>
       <span class="pill hold">Mocked</span><span class="t">We play the university · amounts scaled 1 : 5,000 · CAD conversion simulated</span>
     </div>
-    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#2159E6"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#111418"/></svg>TuitionPilot</div>
+    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
     <div class="num">06 / 12</div>
   </div></section>
 
@@ -421,27 +421,27 @@ tr.us td { color: var(--red-600); font-weight: 600; }
       <div class="card" style="display:flex;flex-direction:column">
         <div style="font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate-500)">Positioning</div>
         <svg viewBox="0 0 560 400" style="width:100%;margin-top:6px" role="img" aria-label="Positioning map: works when the bank will not, against protection">
-          <line x1="64" y1="356" x2="548" y2="356" stroke="#DDE0E7" stroke-width="2"/>
-          <line x1="64" y1="356" x2="64" y2="24" stroke="#DDE0E7" stroke-width="2"/>
-          <line x1="64" y1="190" x2="548" y2="190" stroke="#ECEEF2" stroke-width="1"/>
-          <line x1="306" y1="24" x2="306" y2="356" stroke="#ECEEF2" stroke-width="1"/>
-          <text x="64" y="384" font-family="IBM Plex Mono, monospace" font-size="12" fill="#949BA8" letter-spacing="1.2">WIRE WORKS</text>
-          <text x="548" y="384" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="12" fill="#949BA8" letter-spacing="1.2">WORKS WHEN THE BANK WON’T →</text>
-          <text transform="translate(40,356) rotate(-90)" font-family="IBM Plex Mono, monospace" font-size="12" fill="#949BA8" letter-spacing="1.2">PROTECTION →</text>
-          <circle cx="158" cy="205" r="7" fill="#949BA8"/>
-          <text x="172" y="210" font-family="Inter, sans-serif" font-size="16" fill="#636A78">Bank wire</text>
-          <circle cx="212" cy="112" r="7" fill="#949BA8"/>
-          <text x="226" y="117" font-family="Inter, sans-serif" font-size="16" fill="#636A78">Flywire · Convera</text>
-          <circle cx="470" cy="312" r="7" fill="#949BA8"/>
-          <text x="456" y="317" text-anchor="end" font-family="Inter, sans-serif" font-size="16" fill="#636A78">Parallel market · P2P</text>
-          <circle cx="470" cy="74" r="11" fill="#2159E6"/>
-          <text x="452" y="70" text-anchor="end" font-family="Inter Tight, sans-serif" font-weight="700" font-size="19" fill="#111418">TuitionPilot</text>
-          <text x="452" y="90" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#636A78">where we are aiming</text>
+          <line x1="64" y1="356" x2="548" y2="356" stroke="#E0E3EC" stroke-width="2"/>
+          <line x1="64" y1="356" x2="64" y2="24" stroke="#E0E3EC" stroke-width="2"/>
+          <line x1="64" y1="190" x2="548" y2="190" stroke="#EEF0F5" stroke-width="1"/>
+          <line x1="306" y1="24" x2="306" y2="356" stroke="#EEF0F5" stroke-width="1"/>
+          <text x="64" y="384" font-family="IBM Plex Mono, monospace" font-size="12" fill="#98A0B5" letter-spacing="1.2">WIRE WORKS</text>
+          <text x="548" y="384" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="12" fill="#98A0B5" letter-spacing="1.2">WORKS WHEN THE BANK WON’T →</text>
+          <text transform="translate(40,356) rotate(-90)" font-family="IBM Plex Mono, monospace" font-size="12" fill="#98A0B5" letter-spacing="1.2">PROTECTION →</text>
+          <circle cx="158" cy="205" r="7" fill="#98A0B5"/>
+          <text x="172" y="210" font-family="Inter, sans-serif" font-size="16" fill="#6B7388">Bank wire</text>
+          <circle cx="212" cy="112" r="7" fill="#98A0B5"/>
+          <text x="226" y="117" font-family="Inter, sans-serif" font-size="16" fill="#6B7388">Flywire · Convera</text>
+          <circle cx="470" cy="312" r="7" fill="#98A0B5"/>
+          <text x="456" y="317" text-anchor="end" font-family="Inter, sans-serif" font-size="16" fill="#6B7388">Parallel market · P2P</text>
+          <circle cx="470" cy="74" r="11" fill="#D2102C"/>
+          <text x="452" y="70" text-anchor="end" font-family="Inter Tight, sans-serif" font-weight="700" font-size="19" fill="#0A0B3B">TuitionPilot</text>
+          <text x="452" y="90" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#6B7388">where we are aiming</text>
         </svg>
         <p style="font-size:18px;line-height:1.45;color:var(--slate-500);margin:auto 0 0">The routes that still work when a bank won’t send money are the ones with no fraud protection and no receipt.</p>
       </div>
     </div>
-    <div class="brand" style="bottom:20px"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#2159E6"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#111418"/></svg>TuitionPilot</div>
+    <div class="brand" style="bottom:20px"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
     <div class="num" style="bottom:20px">07 / 12</div>
   </div></section>
 
@@ -465,7 +465,7 @@ tr.us td { color: var(--red-600); font-weight: 600; }
     </div>
     <p class="lead" style="margin-top:24px;font-size:20px;max-width:1340px">Canada’s permit cap cut student numbers 26% in 2025, so schools are competing for the students who can pay — which is also why an unpaid fee matters more to them than it used to.</p>
     <div class="src" style="margin-top:auto;margin-bottom:52px">IRCC study-permit holders, 31 Dec 2025 · Statistics Canada 2025/26 tuition (undergrad CAD 41,746 · grad CAD 24,028) · the year-one number is our assumption, not a forecast</div>
-    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#2159E6"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#111418"/></svg>TuitionPilot</div>
+    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
     <div class="num">08 / 12</div>
   </div></section>
 
@@ -475,13 +475,13 @@ tr.us td { color: var(--red-600); font-weight: 600; }
     <h2>What is built, and what would have to be true next.</h2>
     <div class="tl">
       <svg viewBox="0 0 1424 90" style="width:100%" role="img" aria-label="Timeline: today, three months, six months">
-        <line x1="60" y1="46" x2="1364" y2="46" stroke="#DDE0E7" stroke-width="3"/>
-        <circle cx="60" cy="46" r="16" fill="#2159E6"/>
-        <circle cx="712" cy="46" r="12" fill="#fff" stroke="#C3C8D2" stroke-width="3"/>
-        <circle cx="1364" cy="46" r="12" fill="#fff" stroke="#C3C8D2" stroke-width="3"/>
-        <text x="60" y="88" font-family="IBM Plex Mono, monospace" font-size="14" fill="#949BA8" letter-spacing="1.2">TODAY</text>
-        <text x="712" y="88" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" fill="#949BA8" letter-spacing="1.2">+3 MONTHS</text>
-        <text x="1364" y="88" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="14" fill="#949BA8" letter-spacing="1.2">+6 MONTHS</text>
+        <line x1="60" y1="46" x2="1364" y2="46" stroke="#E0E3EC" stroke-width="3"/>
+        <circle cx="60" cy="46" r="16" fill="#D2102C"/>
+        <circle cx="712" cy="46" r="12" fill="#fff" stroke="#C6CBD8" stroke-width="3"/>
+        <circle cx="1364" cy="46" r="12" fill="#fff" stroke="#C6CBD8" stroke-width="3"/>
+        <text x="60" y="88" font-family="IBM Plex Mono, monospace" font-size="14" fill="#98A0B5" letter-spacing="1.2">TODAY</text>
+        <text x="712" y="88" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="14" fill="#98A0B5" letter-spacing="1.2">+3 MONTHS</text>
+        <text x="1364" y="88" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="14" fill="#98A0B5" letter-spacing="1.2">+6 MONTHS</text>
       </svg>
       <div class="tlcols">
         <div>
@@ -514,7 +514,7 @@ tr.us td { color: var(--red-600); font-weight: 600; }
         </div>
       </div>
     </div>
-    <div class="brand" style="bottom:20px"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#2159E6"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#111418"/></svg>TuitionPilot</div>
+    <div class="brand" style="bottom:20px"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
     <div class="num" style="bottom:20px">09 / 12</div>
   </div></section>
 
@@ -534,7 +534,7 @@ tr.us td { color: var(--red-600); font-weight: 600; }
         <p>Payments engineering and AI agents.</p>
       </div>
     </div>
-    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#2159E6"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#111418"/></svg>TuitionPilot</div>
+    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
     <div class="num">10 / 12</div>
   </div></section>
 
@@ -564,7 +564,7 @@ tr.us td { color: var(--red-600); font-weight: 600; }
         <p>To find out whether the wire really fails at the moment tuition is due.</p>
       </div>
     </div>
-    <div class="brand" style="bottom:20px"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#2159E6"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#111418"/></svg>TuitionPilot</div>
+    <div class="brand" style="bottom:20px"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
     <div class="num" style="bottom:20px">11 / 12</div>
   </div></section>
 
@@ -595,7 +595,7 @@ tr.us td { color: var(--red-600); font-weight: 600; }
         github.com/jpashami/tuitionpilot
       </div>
     </div>
-    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#2159E6"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#111418"/></svg>TuitionPilot</div>
+    <div class="brand"><svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 L42.1 23 L21.9 23 Z" fill="#D2102C"/><path d="M21.9 23 L42.1 23 L57 48 L32 36 L7 48 Z" fill="#0A0B3B"/></svg>TuitionPilot</div>
     <div class="num">12 / 12</div>
   </div></section>
 

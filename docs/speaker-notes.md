@@ -1,150 +1,159 @@
 # TuitionPilot — timed speaker notes
 
 **Slot:** 5 minutes · **Deck:** 12 slides · **Presenter:** Jafar Pashami
-**Target pace:** ~145 words per minute. The script below is 660 spoken words — about 4:35 of talking, which leaves roughly 25 seconds of slack for the agent's live runs on slide 05. Each run takes 30–40 seconds, so keep talking over them rather than waiting in silence.
+**Pace:** ~145 words per minute. The script is 642 spoken words — about 4:26 of talking, leaving roughly 35 seconds of slack for the agent's live runs on slide 06. Each run takes 30–40 seconds, so talk over them rather than watching the spinner.
 
-Open the deck at `/deck/` and press **F** for fullscreen, or present the PDF. `?slide=N` opens a single slide at native size if you need to jump.
+Open the deck at `/deck/` and use fullscreen, or present the PDF. `?slide=N` opens one slide at native size.
 
-## Timing at a glance
+## Timing
 
 | Time | Slide | Beat | Length |
 |---|---|---|---|
-| 0:00 | 01 · Title | Who you are, one line | 0:15 |
-| 0:15 | 02 · Problem | The money can't leave | 0:40 |
-| 0:55 | 03 · Value proposition | The one sentence | 0:25 |
-| 1:20 | 04 · Solution | How it works | 0:30 |
-| 1:50 | 05 · Demo | **Pays one, refuses two** | 1:15 |
-| 3:05 | 06 · Why it's safe | AI reads, code decides | 0:25 |
-| 3:30 | 07 · Competition | Where we win | 0:20 |
-| 3:50 | 08 · Market | TAM / SAM / TM | 0:20 |
-| 4:10 | 09 · Go to market | Built, next, channel | 0:15 |
-| 4:25 | 10 · Team | Ten seconds, no more | 0:10 |
-| 4:35 | 11 · The ask | Four things | 0:20 |
-| 4:55 | 12 · Thanks | Sponsors, sign off | 0:05 |
+| 0:00 | 01 · Title | What it is, in one line | 0:12 |
+| 0:12 | 02 · Problem | Three people, three failures | 0:45 |
+| 0:57 | 03 · Value proposition | The statement | 0:23 |
+| 1:20 | 04 · How it works | The path of one payment | 0:25 |
+| 1:45 | 05 · Architecture | Model reads, code decides | 0:30 |
+| 2:15 | 06 · Demo | **Pays one, refuses two** | 1:10 |
+| 3:25 | 07 · Competition | What exists today | 0:20 |
+| 3:45 | 08 · Market | TAM / SAM / TM | 0:20 |
+| 4:05 | 09 · Built / next | Honest status | 0:18 |
+| 4:23 | 10 · Team | Say your name, move on | 0:07 |
+| 4:30 | 11 · Ask | What would help | 0:20 |
+| 4:50 | 12 · Thanks | Credits, stop talking | 0:10 |
 
-**The demo is the pitch.** Everything before it earns attention; everything after it is evidence. If you are running late, cut from slides 07–10, never from 05.
-
----
-
-## 0:00 · Slide 01 — Title (15s)
-
-> Good afternoon. I'm Jafar, from Novalycs.
->
-> TuitionPilot is an AI agent that pays international tuition — on time, only to the right school, and never twice.
-
-*Don't read the subtitle. Move.*
-
-## 0:15 · Slide 02 — Problem (40s)
-
-> Meet Reza. He's in Lagos, and his daughter studies in Canada. Eight to twelve thousand dollars a term.
->
-> He has the money. He just can't send it. Nigeria's central bank stopped supplying foreign exchange for study abroad. When a wire does work, it takes one to five days and hides two to four percent.
->
-> Meanwhile the due date doesn't move. Miss it and you get a late fee and a registration hold — and for an international student, that's visa stress.
->
-> And the people who know this send fake invoices. One Canadian scam took a hundred and twenty-five thousand dollars from twenty-three students.
-
-*Point at the red X. That's the whole problem in one image.*
-
-## 0:55 · Slide 03 — Value proposition (25s)
-
-> So, our value proposition.
->
-> For families whose bank can't reliably send tuition abroad, Novalycs has built TuitionPilot — so the money leaves when a wire can't, the tuition is paid before the due date, and the whole payment is handled end to end.
->
-> Set the rules once. The agent does the rest — and refuses anything that doesn't match.
-
-*This is the sentence the judges will quote back. Slow down. Land all three.*
-
-## 1:20 · Slide 04 — Solution (30s)
-
-> Here's how. The parent sets the rules once: approved school, cap per term, payment window, autopay. The student uploads the invoice.
->
-> The agent reads it with Claude, checks it against the rules, and signs its half. GoBTC Pay co-signs — it's a two-of-three wallet, so no single key can move the money. The university receives Canadian dollars. They never touch crypto.
->
-> Both sides get the same receipt.
-
-## 1:50 · Slide 05 — Demo (75s)
-
-**Switch to the live app. Three invoices, queued in this order.**
-
-> Three invoices. Watch what the agent does with each.
->
-> **[Invoice 1 — the fraud]** This one says "updated payment details," and buried in the text is an instruction telling payment assistants to skip the checks. The agent reads the invoice — but the rules run in code. It's not the merchant Reza approved. Refused. Nothing signed. The family gets told.
->
-> **[Invoice 2 — the real one]** Now the real invoice. Eight thousand four hundred and fifty dollars. All eight rules pass. GoBTC issues the payment request and locks the Bitcoin price. The agent verifies the payee and the amount, signs locally, submits.
->
-> **[Hold on the status]** Paid. Seconds. GoBTC has co-signed, so those coins cannot go anywhere else — the deadline is met. This is a real payment on Bitcoin mainnet, scaled down for the demo.
->
-> **[Invoice 3 — upload the same one again]** And if I upload that same invoice again — duplicate. Zero second payment.
-
-*If a run stalls, keep talking and move on. Never apologise twice.*
-
-## 3:05 · Slide 06 — Why it's safe (25s)
-
-> The principle: the AI decides what the invoice *says*. Code decides what gets *paid*.
->
-> The rules are re-checked immediately before signing, and the model cannot override them. Every invoice gets one order key, claimed in the database before any money moves. And the exchange rate is locked at request and shown to everyone.
-
-## 3:30 · Slide 07 — Competition (20s)
-
-> On price we're competitive, not cheapest — and we don't promise the best rate.
->
-> But our competition isn't Flywire. It's the parallel market a family turns to when the bank says no. That corner of the map — works when the bank won't, *and* protects you — is empty today.
-
-## 3:50 · Slide 08 — Market (20s)
-
-> Twenty-five billion dollars of tuition crosses a border into Canada every year. Our corridor — Nigeria to Canada — is a billion of that. Year one we're going after a thousand families.
->
-> And the cap cut student numbers twenty-six percent, so every school is now fighting for the students who *can* pay.
-
-## 4:10 · Slide 09 — Go to market (15s)
-
-> It already works on mainnet. Next six months: an off-ramp partner so the school is paid in Canadian dollars directly, a stablecoin rail, and FINTRAC registration. We reach families through education agents and university international offices.
-
-## 4:25 · Slide 10 — Team (10s)
-
-> I built all of this — the agent, the Bitcoin signing path, and the compliance onboarding most demos skip.
-
-## 4:35 · Slide 11 — The ask (20s)
-
-> Four asks. An off-ramp partner who takes stablecoins and pays a Canadian bursar. One university office to pilot with. FINTRAC guidance. And ten families in Lagos paying tuition this term.
->
-> Families set the rules. TuitionPilot makes sure the school gets paid — once, on time, to the right account.
-
-## 4:55 · Slide 12 — Thanks (5s)
-
-> Thank you to Agnic AI and GoBTC Pay. Happy to take questions.
+The demo is the centre. If you are behind, cut from 07–09, never from 06.
 
 ---
 
-## If you're over time
+## 0:00 · Slide 01 — Title (12s)
+
+> I'm Jafar, from Novalycs. This is TuitionPilot — an AI agent that pays international tuition.
+>
+> It reads the invoice, checks it against rules the family set, pays from its own wallet, and refuses anything that doesn't match.
+
+## 0:12 · Slide 02 — Problem (45s)
+
+> Paying tuition across a border fails differently for each of the three people involved.
+>
+> **The parent** has the money and can't send it. Nigeria's central bank stopped supplying foreign exchange for study abroad, and where a wire works it takes one to five days.
+>
+> **The student** can't tell what's real. "Updated payment details" looks exactly like a real invoice — one Canadian scam took a hundred and twenty-five thousand dollars from twenty-three students. And nobody can prove the school was paid.
+>
+> **The university** sees an unpaid balance and can't tell whether money is coming or was never sent. Its only lever is a registration hold — on a student it already admitted.
+
+*Three cards, three voices. Let the quotes do the work.*
+
+## 0:57 · Slide 03 — Value proposition (23s)
+
+> So: for families whose bank can't reliably send tuition abroad, we built TuitionPilot, so that the money leaves when a wire can't, the tuition is paid before the due date, and the payment is handled end to end.
+>
+> For these families the alternative isn't a cheaper wire. It's no wire.
+
+*Slow down here. Three benefits, land all three.*
+
+## 1:20 · Slide 04 — How it works (25s)
+
+> The parent sets the rules once: approved school, cap per term, payment window. The student uploads the invoice.
+>
+> The agent reads it, checks it, signs half the transaction. GoBTC Pay co-signs — two-of-three, so no single key moves the money. The university receives Canadian dollars; it never touches crypto. Both sides read the same receipt.
+
+## 1:45 · Slide 05 — Architecture (30s)
+
+> Here's how it's put together, because this is the part I'd want to ask about.
+>
+> Claude reads the invoice into fields — payee, amount, term, due date. That's all it does. It never returns a decision.
+>
+> The decision is a rule engine in ordinary TypeScript: eight rules, re-run immediately before anything is signed. Only if all eight pass does GoBTC issue a payment request.
+>
+> Underneath, an order key hashed from the invoice is claimed before paying, so one invoice can only ever produce one payment.
+
+*This slide is why the demo is believable. Don't rush it.*
+
+## 2:15 · Slide 06 — Demo (70s)
+
+**Switch to the live app. Queue the invoices in this order.**
+
+> Three invoices.
+>
+> **[Invoice 1 — the fraud]** This one says "updated payment details," and hidden in the text is an instruction telling payment assistants to skip the checks. The agent reads the invoice — but the rules run in code. It isn't the merchant the parent approved. Refused. Nothing signed.
+>
+> **[Invoice 2 — the real one]** The real invoice: eight thousand four hundred and fifty dollars. All eight rules pass. GoBTC issues the request and locks the Bitcoin price. The agent verifies the payee and the amount, signs locally, submits.
+>
+> **[Hold on the status]** Paid. GoBTC has co-signed, so those coins can't go anywhere else — the deadline is met. This is a real payment on Bitcoin mainnet, scaled down for the demo.
+>
+> **[Upload invoice 2 again]** Same invoice again — duplicate. No second payment.
+
+*If a run stalls, keep talking and move on.*
+
+## 3:25 · Slide 07 — Competition (20s)
+
+> This is how families pay today. We're competitive on cost, not cheapest, and we don't promise the best rate.
+>
+> The route we'd actually be replacing is the bottom one — the parallel market, used when the wire fails. That's where there's no fraud protection and no receipt.
+
+## 3:45 · Slide 08 — Market (20s)
+
+> Twenty-five billion dollars of tuition crosses a border into Canada each year. The Nigeria corridor is about a billion of that. Year one we'd be aiming at a thousand families — and that last number is an assumption, not a forecast.
+
+## 4:05 · Slide 09 — Built / next (18s)
+
+> Built: a real payment on mainnet, refusals, no duplicates, the compliance onboarding.
+>
+> What has to be true next: a licensed off-ramp partner, a stablecoin rail, and FINTRAC registration.
+
+## 4:23 · Slide 10 — Team (7s)
+
+> That's me — Jafar, Novalycs. Payments engineering and AI agents.
+
+## 4:30 · Slide 11 — Ask (20s)
+
+> Four things would help. An off-ramp partner who takes stablecoins and can pay a Canadian bursar. One university office willing to pilot. FINTRAC guidance. And ten families in the corridor to tell us whether we've got the problem right.
+
+## 4:50 · Slide 12 — Thanks (10s)
+
+> Thank you to Agnic AI and to GoBTC Pay. The code and the write-up are both linked here. Happy to take questions.
+
+---
+
+## If you run long
 
 Cut in this order — each is self-contained:
 
-1. Slide 09, go to market (–15s)
-2. Slide 07, competition (–20s) — keep the one line "our competition is the parallel market"
-3. Slide 08, market, down to the first sentence only (–12s)
+1. Slide 09 (–18s)
+2. Slide 07, down to the one line about the parallel market (–14s)
+3. Slide 08, down to the first sentence (–12s)
 
 ## Questions to expect
 
-**"Is this actually cheaper?"**
-No, and we don't claim it. One-and-a-half to four-and-a-half percent all-in — competitive with Flywire, not better. We win where the wire fails. A family whose bank refused foreign exchange is comparing us to a late fee, not to Convera.
+**"Is it cheaper?"**
+No. One-and-a-half to four-and-a-half percent all in, which is competitive with Flywire and not better. The case isn't price, it's that these families often can't send the money at all.
 
 **"What's real and what's mocked?"**
-Real: the mainnet payment, the agent's two-of-three wallet, the invoice reading, the rules, the pay-once protection. Mocked: we play the university's merchant account, amounts are scaled one to five thousand, and the conversion to Canadian dollars is simulated. It's on the demo slide.
+Real: the mainnet payment, the two-of-three wallet, the invoice reading, the rules, the pay-once protection. Mocked: we play the university's merchant account, amounts are scaled one to five thousand, and the conversion to Canadian dollars is simulated. It's on the demo slide.
 
-**"What if the model is wrong about the invoice?"**
-Then the rule check catches it, because the rules don't come from the invoice — they come from the parent. Payee, student, currency, cap, window. And new schools or large amounts go to human approval.
+**"What if the model reads the invoice wrong?"**
+The rule check catches it, because the rules don't come from the invoice — they come from the parent. Payee, student, currency, cap, window. New schools and large amounts would go to human approval.
 
 **"Prompt injection?"**
-Demonstrated on stage. Invoice two has hidden text telling payment assistants to skip the checks. The agent treats invoice text as data, flags it, and refuses.
+Shown on stage. Invoice one has hidden text telling payment assistants to skip the checks. Invoice text is treated as data; the agent flags it and refuses.
 
 **"Isn't Bitcoin too volatile for tuition?"**
-That's why the rate is locked at request for thirty minutes and the wallet is topped up just before a due date, not months ahead. And it's why the stablecoin rail is next — families in this corridor already hold USDT.
+The rate is locked at request for thirty minutes, and the wallet is topped up just before a due date rather than months ahead. Stablecoins are the next rail — families in this corridor already hold USDT.
 
 **"Are you registered with FINTRAC?"**
-Not yet — we'd be a money services business, and we register before operating, or launch through a licensed partner. The client-identification flow is already built: payer verified before any transfer over a thousand dollars, records kept five years.
+No. We'd be a money services business, so that's registration before operating, or launching through a licensed partner. The client-identification flow is already built — payer verified before any transfer over a thousand dollars, records kept five years.
 
-**"Why would a university agree?"**
-They don't have to hold crypto or change anything — they receive Canadian dollars through an off-ramp partner. What they get is fewer unpaid fees and fewer registration holds on students they've already admitted.
+**"Why would a university take this?"**
+They don't hold crypto or change anything; they receive Canadian dollars through an off-ramp partner. What changes is that they can see a payment is committed instead of guessing.
+
+**"What did you learn building it?"**
+The interesting problem wasn't Bitcoin — it was deciding what the model is allowed to decide. Every safety property in this project comes from narrowing that, not from a better prompt.
+
+## Before you present
+
+- [ ] Add a photo at `docs/deck/assets/jafar.jpg` (square, 600px+) — otherwise slide 10 shows a "JP" monogram
+- [ ] Add `docs/deck/assets/agnic.svg` and `docs/deck/assets/gobtc-pay.svg` — otherwise slides 01 and 12 show text wordmarks
+- [ ] Re-export the PDF after adding either (`npm run site:build`, then print `/deck/` from the browser)
+- [ ] Wallet funded, `PAYMENTS_ENABLED=true`, `npm run dev` restarted
+- [ ] Demo samples created in order: "Updated payment details", then "Fall 2026 tuition"

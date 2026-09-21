@@ -1,6 +1,6 @@
 // Assemble the static Cloudflare Pages site in site/ from the docs that live in the repo.
 // Usage: npm run site:build   (then: npm run site:deploy)
-import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const root = process.cwd();
@@ -42,6 +42,10 @@ writeFileSync(
   ),
 );
 copyFileSync(join(root, 'docs/deck/TuitionPilot-Novalycs-deck.pdf'), join(site, 'deck', 'TuitionPilot-Novalycs-deck.pdf'));
+
+// Sponsor logos and the team photo, if they have been added.
+const deckAssets = join(root, 'docs/deck/assets');
+if (existsSync(deckAssets)) cpSync(deckAssets, join(site, 'deck', 'assets'), { recursive: true });
 
 page('docs/prd.html', 'prd');
 
